@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Right_arrow" data-name="Right arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 59">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Polygon_8" data-name="Polygon 8">
+    <path class="cls-2" d="M35.91,21.31v16.55c0,1.31-.88,1.95-1.26,2.17-.38.22-1.38.65-2.51-.01l-14.11-8.27c-1.12-.65-1.24-1.73-1.24-2.16s.12-1.5,1.24-2.16l14.11-8.27c1.13-.66,2.13-.23,2.51-.01.38.22,1.26.86,1.26,2.17Z"/>
+    <path class="cls-2" d="M19.3,29.58l14.11,8.27s0,0,0,0v-16.55s-14.11,8.27-14.11,8.27c0,0,0,0,0,0M14.3,29.58c0-1.67.82-3.35,2.47-4.31l14.11-8.27c3.33-1.95,7.53.45,7.53,4.31v16.55c0,3.86-4.2,6.27-7.53,4.31l-14.11-8.27c-1.65-.97-2.47-2.64-2.47-4.31Z"/>
+  </g>
+  <g id="Ellipse_8" data-name="Ellipse 8">
+    <circle class="cls-1" cx="29.5" cy="29.5" r="29.5"/>
+    <circle class="cls-3" cx="29.5" cy="29.5" r="28.5"/>
+  </g>
+</svg>

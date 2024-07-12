@@ -1,0 +1,934 @@
+html{
+    font-size: 100%;
+}
+
+body{
+    background-color: #060B29;
+    background-image: url("./Resources/Background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    color: white;
+    font-family:'helvetica' ;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    overflow-x: clip;
+}
+.hum{
+    display: flex;
+    justify-content:  flex-start;
+    align-items: flex-start;
+    margin-left: 10%;
+}
+.humburger-Menu{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    cursor: pointer;
+   
+}
+
+
+.humburger-Menu span{
+    background-color: white;
+   position:absolute;
+   height: 6px;
+   border-radius: 20px;
+   width: 100%;
+   top: 50%;
+   left: 0% ;
+   transform:translate(-50%, -50%);
+   transition: .3s ease;
+   z-index: 2;
+
+}
+.humburger-Menu span:nth-child(1){
+    top: 25%;
+}
+
+.humburger-Menu span:nth-child(3){
+    top: 75%;
+}
+
+.humburger-Menu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+
+
+}
+.humburger-Menu.active span:nth-child(2){
+    opacity: 0;
+}
+.humburger-Menu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+
+
+}
+
+
+
+.hidden-Menu{
+    display: flex;
+    flex-direction: column;
+    position:fixed;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    margin-top: 0cap;
+    margin-left: 0;
+    margin-right: 0;
+    list-style: none;
+    right: 100%;
+    height: 100vh;
+    width: 100%;
+    font-size: 3rem;
+    z-index: 2;
+    background-color: #060B29;
+   
+    
+}
+.hidden-Menu.active{
+    right: 0%;
+
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+ }
+ 
+.list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'helvetica';
+    margin-right: 3rem;
+    
+}
+
+.list li{
+    margin-right: 4rem;
+    text-underline-offset: 10px;
+    text-decoration: none;
+    position: relative;
+
+    
+}
+
+
+.list li:hover{
+    cursor: pointer;
+}
+
+.list li:not(.contact)::after{
+    content:"";
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 9px;
+    z-index: 1;
+    left: 0;
+    margin-top: 1.8rem;
+    transition: transform 600ms;
+
+
+}
+
+.list li:not(.contact):hover::after{
+    transform: scale(0.8,1);
+}
+
+
+
+.logo{
+    margin-left: 4rem;
+    height:70px;
+    width:160px;
+}
+
+.contact{
+    text-decoration: none !important;
+    background-color: #0C7EEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    width: 120px;
+    height: 50px;
+}
+
+.topPart{
+    display:grid;
+    margin-top: 5%;
+    margin-left: 5%;
+    grid-template-columns: 50% 50%;
+    
+}
+.topPart p{
+    line-height: 30px;
+}
+
+.topPart .hire{
+    opacity: 0.8;
+}
+
+.topPart .order{
+    display: flex;
+    background-color: #0C7EEF;
+    width: 9.375rem;
+    height: 3.75rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 2rem;
+}
+
+.topPart img{
+
+   width: 110%;
+   height: 100%;
+   margin-left:-13% ;
+   
+
+   
+   
+
+}
+
+.topPart .editing{
+
+}
+.editing{
+    margin-left: 15%;
+}
+.mainHeading{
+    font-size: clamp(1rem,3.15vw + 1rem,10rem);
+    margin-bottom: 0;
+    
+   
+}
+
+.order{
+}
+
+.packagesSection{
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    width: 80%;
+    margin-left: 15%;
+    margin-top: 3%;
+    position: relative;
+    
+   
+}
+
+.packages{
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.packagesH{
+    display: flex;
+    font-size: 40px;
+
+}
+
+.orderN{
+    display: flex;
+    border: 3px solid white;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    position: relative;
+    transform: translateX(-100rem);
+    transition: 1600ms ease;
+    
+    
+}
+
+.orderN.active{
+    transform: translateX(0rem);
+}
+
+.orderNow img{
+    height: 9rem;
+    
+
+}
+
+.orderNow{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    height: 15rem;
+    padding-right: 64rem;
+    top: 1.6rem;
+  
+}
+
+.orderNow p{
+    position: relative;
+    display: flex;
+    top: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #0C7EEF;
+    border-radius: 30px;
+    width: 10rem;
+    height: 3.5rem;
+
+
+}
+
+
+.packagesTwo{
+    display: grid;
+    grid-template-rows: 4.5rem auto;
+    grid-template-columns:50% 50%;
+    grid-template-areas:"package package"
+                        "lisO lisT" ;
+    justify-content: center;
+    align-content: center;
+    row-gap:0px ;
+    column-gap: 0px;
+    height: 14rem;
+    margin-left: 18rem;
+    background-color:rgba(255, 255, 255, 0.089);
+    border-radius: 20px;
+    width: 42rem;
+    position: absolute;
+    height: 300px;
+    right: 2.5rem;
+    z-index: 1;
+    backdrop-filter: blur(7px);
+    border: 1px solid;
+    border-color: rgb(255, 255, 255, 0.089);
+    font-size: clamp(10px,100%,100px);
+}
+.packagesTwo h3{
+    display: flex;
+    justify-content: center;
+    grid-area: package;
+    font-size: 25px;
+
+    
+   
+}
+.packagesTwo ul{
+    list-style: none
+    
+}
+
+.packagesTwo li{
+    padding-bottom: 1rem;
+    padding-left: 2.5rem;
+    font-size: 18px;
+    background-image: url('./Resources/Check mark.svg');
+    background-size: 26px 26px;
+    background-repeat:no-repeat ;
+}
+
+
+
+.lis{
+    grid-area: lisO;
+}
+
+.listTwo{
+    grid-area: lisT;
+
+}
+
+.singleVideoEdit{
+    width: 18rem;
+    height: 14rem;
+    
+    display: grid;
+    grid-template-rows: 60px 120px 60px;
+    grid-template-columns:300px;
+    grid-template-areas: "single"
+                         "content"
+                         "oneEight";
+    
+    align-content: center;
+    position:absolute;
+    left:16rem;
+    background-color:rgba(255, 255, 255, 0.089);
+    border-radius: 20px;
+    height: 300px;
+    backdrop-filter: blur(7px);
+    border: 1px solid;
+    border-color: rgb(255, 255, 255, 0.089);
+    
+
+}
+
+.vid{
+
+    font-size: 25px;
+    grid-area: single;
+}
+
+.singleVideoEdit ul{
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    font-size: 18px;
+    grid-area: content;
+    margin-left: 1rem;
+}
+
+.singleVideoEdit li{
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    background-image: url("./Resources/Ellipse 4.svg") ;
+    background-repeat:no-repeat ;
+    background-size: 12px 12px;
+    background-position: 0 0.3rem ;
+
+}
+
+.singleVideoEdit h3{
+    margin-left: 1rem;
+}
+
+
+.perVid{
+    font-size: 25px;
+    grid-area:oneEight;
+
+}
+
+.leftArrowButton{
+    position: absolute;
+  
+    z-index: 1;
+    left: -2rem;
+    rotate:180deg;
+    cursor: pointer;
+    transition: 120ms ease;}
+
+.leftArrowButton:active{
+    transform: scale(0.90);
+}
+
+.orderNTwo{
+    display: flex;
+    border: 3px solid white;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    position: absolute;
+    transition: 1500ms ease;
+    top: 7rem;
+    
+    
+}
+
+.orderNTwo.active{
+    transform: translateX(130%) ;
+
+    
+}
+
+.rightArrowButton{
+    position: absolute;
+  
+    z-index: 1;
+    margin-left: 80rem;
+    cursor: pointer;
+    transition: 120ms ease;
+}
+.rightArrowButton:active{
+    transform: scale(0.90);
+}
+
+@media(min-width:1671px){
+    .humburger-Menu{
+        display: none;
+    }
+
+
+    
+}
+@media(min-width:1441px) and (max-width:1670px){
+    .humburger-Menu{
+        display:none;
+      
+    }
+    .packagesSection{
+       margin-left:20%;
+       
+    }
+
+    .packagesTwo{
+        width: 26rem;
+        right: 1.5rem;
+        
+    }
+
+    .orderN{
+        width: 63rem;
+     }
+
+     .orderNow{
+        right:23.5rem ;
+        padding-right: 0px;
+     }
+
+     .rightArrowButton{
+        margin-left: 63.5rem;
+     }
+    .logo{
+        
+    }
+} 
+
+@media(min-width:1301px) and (max-width:1440px){
+    .humburger-Menu{
+        display:none;
+      
+    }
+    .packagesSection{
+       margin-left:15%;
+       
+    }
+
+    .packagesTwo{
+        width: 26rem;
+        right: 1.5rem;
+        
+    }
+
+    .orderN{
+        width: 63rem;
+     }
+
+     .orderNow{
+        right:23.5rem ;
+        padding-right: 0px;
+     }
+
+     .rightArrowButton{
+        margin-left: 63.5rem;
+     }
+    .logo{
+        
+    }
+} 
+@media (min-width:1171px) and (max-width:1300px){
+    
+    .navbar{
+        display: none;
+    }
+
+    .humburger-Menu{
+        margin-left: 0rem;
+    }
+    .topPart{
+        margin-left: 0;
+    }
+    .contact{
+        
+    }
+
+    .topPart img{
+        margin-left: 0;
+        width: 100%;
+    }
+    .logo{
+        height: 80%;
+        width: 9.3%;
+    }
+
+    .packagesSection{
+        margin-left: 15%;
+       
+        
+    }
+    .packagesTwo{
+        width: 23rem;
+        right: 2rem;
+        
+    }
+
+    .packagesH{
+        font-size: 2.2rem;
+    }
+     .orderN{
+        width: 57rem;
+     }
+     .rightArrowButton{
+        margin-left: 57.5rem;
+     }
+
+     .orderNow{
+        right:21rem ;
+        padding-right: 0px;
+     }
+    
+     .singleVideoEdit{
+        width: 16rem;
+        left:14.5rem;
+     }
+
+
+
+}
+@media (min-width:931px ) and (max-width:1170px){
+    .navbar{
+        display: none;
+    }
+    .topPart{
+        margin-left:0 ;
+    }
+    .topPart img{
+        margin-left: -20%;
+    }
+    .packagesSection{
+        margin-left: 8%;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .orderN{
+        width: 50rem;
+    }
+
+    .rightArrowButton{
+        margin-left: 50.3rem;
+     }
+
+     .singleVideoEdit{
+        width: 16rem;
+        left:10.5rem;
+     }
+
+     .packagesTwo{
+        width: 20rem;
+        right: 2rem;
+        
+    }
+
+    .packagesTwo li{
+        font-size: 16px;
+    }
+
+    .packagesH{
+        font-size: 2rem;
+    }
+    .orderNow{
+        right:19.7rem ;
+        padding-right: 0px;
+     }
+     .orderNow img{
+        width:9rem ;
+        
+     }
+
+}
+@media (min-width:741px ) and (max-width:930px){
+    .navbar{
+        display: none;
+    }
+    .topPart{
+        margin-left:0 ;
+    }
+    .topPart img{
+        margin-left: -20%;
+    }
+    .packagesSection{
+        margin-left: 10%;
+        align-items: center;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .orderN{
+        width: 35rem;
+    }
+
+    .rightArrowButton{
+        margin-left: 35.3rem;
+     }
+
+     .singleVideoEdit{
+        width: 16rem;
+        left:17rem;
+     }
+
+     .packagesTwo{
+        width: 20rem;
+        right: 2rem;
+        display: none;
+        
+    }
+
+    .packagesTwo li{
+        font-size: 16px;
+    }
+
+    .packagesH{
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    .orderNow{
+        right:8.7rem ;
+        padding-right: 0px;
+     }
+     .orderNow img{
+        width:25rem ;
+        
+        
+     }
+
+}
+@media (min-width:591px) and (max-width:740px){
+    .navbar{
+        display: none;
+    }
+    .topPart{
+        margin-left:0 ;
+    }
+    .topPart .order{
+        width: 7.375rem;
+        height: 2.75rem;
+        font-size: 0.7rem;
+    }
+    .topPart img{
+        margin-left: 0%;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .packagesSection{
+        margin-left: 8%;
+        align-items: center;
+    }
+
+    .orderN{
+        width: 35rem;
+    }
+
+    .rightArrowButton{
+        margin-left: 35.3rem;
+     }
+
+     .singleVideoEdit{
+        width: 16rem;
+        left:17rem;
+     }
+
+     .packagesTwo{
+        width: 20rem;
+        right: 2rem;
+        display: none;
+        
+    }
+
+    .packagesTwo li{
+        font-size: 16px;
+    }
+
+    .packagesH{
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    .orderNow{
+        right:8.7rem ;
+        padding-right: 0px;
+     }
+     .orderNow img{
+        width:11rem ;
+        
+        
+     }
+
+     .contact{
+        display: none;
+     }
+
+}
+
+@media (min-width:531px)and (max-width:590px){
+    .navbar{
+        display: none;
+    }
+    .topPart{
+        margin-left:0 ;
+    }
+    .topPart .order{
+        width: 7.375rem;
+        height: 2.75rem;
+        font-size: 0.7rem;
+    }
+    .topPart img{
+        margin-left: 0%;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .packagesSection{
+        margin-left: 12%;
+        align-items: center;
+    }
+
+    .orderN{
+        width: 30rem;
+    }
+
+    .rightArrowButton{
+        margin-left: 30.3rem;
+     }
+
+     .singleVideoEdit{
+        width: 16rem;
+        left:12.5rem;
+     }
+
+     .packagesTwo{
+        width: 20rem;
+        right: 2rem;
+        display: none;
+        
+    }
+
+    .packagesTwo li{
+        font-size: 16px;
+    }
+
+    .packagesH{
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    .orderNow{
+        right:8.7rem ;
+        padding-right: 0px;
+     }
+     .orderNow img{
+        width:11rem ;
+        
+        
+     }
+
+     .contact{
+        display: none;
+     }
+
+}
+@media(max-width:530px){
+    .navbar{
+        display: none;
+    }
+    .humburger-Menu{
+        
+    }
+    .topPart{
+        margin-left:0 ;
+    }
+    .topPart .order{
+        width: 7.375rem;
+        height: 2.75rem;
+        font-size: 0.7rem;
+    }
+    .topPart img{
+        margin-right: 10%;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .packagesSection{
+        margin-left: 10%;
+        align-items: center;
+    }
+
+    .orderN{
+        width: 15rem;
+        height: 17rem;
+        flex-direction: column;
+    }
+
+    .rightArrowButton{
+        margin-left: 15.3rem;
+     }
+
+     .singleVideoEdit{
+        width: 13rem;
+        height: 16rem;
+        left:1rem;
+        bottom: 2rem;
+     }
+     .singleVideoEdit h3{
+        font-size: 1.2rem;
+     }
+
+     .singleVideoEdit li{
+        font-size: 13px;
+     }
+
+     .packagesTwo{
+        width: 20rem;
+        right: 2rem;
+        display: none;
+        
+    }
+
+    .packagesTwo li{
+        font-size: 1.2rem;
+    }
+
+    .packagesH{
+        font-size: 1.5rem;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+    }
+    .orderNow{
+        top: 7rem;
+        right:0rem ;
+        padding-right: 0px;
+
+     }
+     .orderNow img{
+        width:11rem ;
+        height: 6rem;
+        display: none;
+        
+        
+     }
+
+     .orderNow p{
+        width: 6rem;
+        height: 3rem;
+        font-size: 0.7rem;
+    }
+
+     .contact{
+        display: none;
+     }
+
+}

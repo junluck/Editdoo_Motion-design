@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189.33 79.57">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 21px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        isolation: isolate;
+      }
+
+      .cls-1, .cls-3, .cls-7 {
+        font-family: SegoeUI, 'Segoe UI';
+      }
+
+      .cls-1, .cls-6, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3, .cls-8, .cls-6, .cls-9 {
+        stroke-width: 2px;
+      }
+
+      .cls-2, .cls-3, .cls-8, .cls-9 {
+        fill: none;
+      }
+
+      .cls-2, .cls-4 {
+        stroke: #0a0e34;
+      }
+
+      .cls-2, .cls-4, .cls-8, .cls-6, .cls-9 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2, .cls-4, .cls-6 {
+        opacity: .98;
+      }
+
+      .cls-2, .cls-4, .cls-6, .cls-9 {
+        stroke-linecap: round;
+      }
+
+      .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3, .cls-8, .cls-6, .cls-9 {
+        stroke: #fff;
+      }
+
+      .cls-3, .cls-7 {
+        font-size: 34px;
+        letter-spacing: .02em;
+      }
+
+      .cls-4 {
+        fill: #0a0e34;
+        stroke-width: 2px;
+      }
+
+      .cls-8 {
+        stroke-dasharray: 0 16;
+        stroke-linecap: square;
+      }
+    </style>
+  </defs>
+  <g id="Logo">
+    <g id="Group_2" data-name="Group 2">
+      <g id="Edit" class="cls-5">
+        <text class="cls-7" transform="translate(82.5 52.28)"><tspan x="0" y="0">Edit</tspan></text>
+        <text class="cls-3" transform="translate(82.5 52.28)"><tspan x="0" y="0">Edit</tspan></text>
+      </g>
+      <g id="Doo" class="cls-5">
+        <text class="cls-1" transform="translate(150 52.95)"><tspan x="0" y="0">Doo</tspan></text>
+      </g>
+      <ellipse id="Ellipse_1" data-name="Ellipse 1" class="cls-9" cx="39.23" cy="39.05" rx="31.01" ry="31.42"/>
+      <ellipse id="Ellipse_2" data-name="Ellipse 2" class="cls-9" cx="39.28" cy="39.78" rx="38.28" ry="38.78"/>
+      <ellipse id="Ellipse_3" data-name="Ellipse 3" class="cls-8" cx="39.33" cy="39.54" rx="34.86" ry="35.32"/>
+      <line id="Line_1" data-name="Line 1" class="cls-9" x1="31.38" y1="31.78" x2="47.49" y2="47.07"/>
+      <path id="Path_8" data-name="Path 8" class="cls-6" d="M14.23,34l32.4,30.75,4.08-4.42-2.19-6.98,7.43,1.96-2.35-7.13,7.18,1.91,4.08-4.42L31.03,13.57l-4.08,4.42,3.08,7.63-7.5-2.21,2.64,7.78-7.74-2.26-3.99,4.32.79.75Z"/>
+      <path id="Path_9" data-name="Path 9" class="cls-2" d="M27.49,31.66l3.88.11-.57-3.7"/>
+      <rect id="Rectangle_189" data-name="Rectangle 189" class="cls-4" x="32.27" y="33.05" width="2.46" height="2.49" transform="translate(-2.17 2.27) rotate(-3.75)"/>
+      <path id="Path_10" data-name="Path 10" class="cls-2" d="M51.77,47.19h-3.88s.69,3.69.69,3.69"/>
+      <rect id="Rectangle_190" data-name="Rectangle 190" class="cls-4" x="36.41" y="36.36" width="6.15" height="6.23" transform="translate(-2.5 2.67) rotate(-3.75)"/>
+      <rect id="Rectangle_191" data-name="Rectangle 191" class="cls-4" x="44.12" y="43.55" width="2.46" height="2.49" transform="translate(-2.83 3.06) rotate(-3.75)"/>
+    </g>
+  </g>
+</svg>

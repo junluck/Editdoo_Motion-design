@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="79.565" viewBox="0 0 190 79.565">
+  <g id="Logo" transform="translate(306.573 164.998)">
+    <g id="Group_2" data-name="Group 2" transform="translate(-305.573 -163.998)">
+      <text id="Edit" transform="translate(81.5 51.283)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="2" font-size="34" font-family="SegoeUI, Segoe UI" letter-spacing="0.022em"><tspan x="0" y="0">Edit</tspan></text>
+      <text id="Doo" transform="translate(149 51.948)" fill="#fff" font-size="21" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Doo</tspan></text>
+      <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="31.014" cy="31.421" rx="31.014" ry="31.421" transform="translate(7.214 6.627)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="38.281" cy="38.783" rx="38.281" ry="38.783" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="34.86" cy="35.317" rx="34.86" ry="35.317" transform="translate(3.467 3.224)" fill="none" stroke="#fff" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" stroke-dasharray="16"/>
+      <line id="Line_1" data-name="Line 1" x2="16.115" y2="15.291" transform="translate(30.378 30.776)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_8" data-name="Path 8" d="M63.331,82.83l32.4,30.745,4.083-4.417-2.194-6.98,7.429,1.962L102.7,97.009l7.178,1.911,4.083-4.417L80.129,62.4l-4.083,4.417,3.081,7.634-7.5-2.213,2.643,7.784L66.527,77.76l-3.99,4.316Z" transform="translate(-50.101 -49.833)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.98"/>
+      <path id="Path_9" data-name="Path 9" d="M125.315,129.931l3.884.114-.567-3.7" transform="translate(-98.821 -99.268)" fill="none" stroke="#0a0e34" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.98"/>
+      <rect id="Rectangle_189" data-name="Rectangle 189" width="2.461" height="2.493" transform="translate(31.189 32.138) rotate(-3.752)" fill="#0a0e34" stroke="#0a0e34" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.98"/>
+      <path id="Path_10" data-name="Path 10" d="M220.244,210.612l-3.885.015.686,3.68" transform="translate(-169.478 -164.42)" fill="none" stroke="#0a0e34" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.98"/>
+      <rect id="Rectangle_190" data-name="Rectangle 190" width="6.146" height="6.226" transform="translate(35.208 35.565) rotate(-3.752)" fill="#0a0e34" stroke="#0a0e34" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.98"/>
+      <rect id="Rectangle_191" data-name="Rectangle 191" width="2.461" height="2.493" transform="translate(43.039 42.637) rotate(-3.752)" fill="#0a0e34" stroke="#0a0e34" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.98"/>
+    </g>
+  </g>
+</svg>
