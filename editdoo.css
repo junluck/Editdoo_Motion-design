@@ -1,5 +1,6 @@
 html{
     font-size: 100%;
+    overflow-x: clip;
 }
 
 body{
@@ -15,7 +16,10 @@ body{
     width: auto;
     height: auto;
     overflow-x: clip;
+    
+   
 }
+
 .hum{
     display: flex;
     justify-content:  flex-start;
@@ -27,7 +31,7 @@ body{
     width: 50px;
     position: relative;
     cursor: pointer;
-   
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -42,6 +46,7 @@ body{
    transform:translate(-50%, -50%);
    transition: .3s ease;
    z-index: 2;
+   
 
 }
 .humburger-Menu span:nth-child(1){
@@ -415,7 +420,7 @@ body{
 
 .leftArrowButton{
     position: absolute;
-  
+    -webkit-tap-highlight-color: transparent;
     z-index: 1;
     left: -2rem;
     rotate:180deg;
@@ -448,7 +453,7 @@ body{
 
 .rightArrowButton{
     position: absolute;
-  
+    -webkit-tap-highlight-color: transparent;
     z-index: 1;
     margin-left: 80rem;
     cursor: pointer;
