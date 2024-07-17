@@ -24,3 +24,14 @@ sliderArrowOne.addEventListener('click',() =>{
     menuTwo.classList.toggle('active');
 
 })
+
+menuTwo.addEventListener("touchmove",touchMove =>{
+    touchMove.preventDefault()
+    let motionDesignPackage = document.getElementById("orderNTwo")
+    let touchLocationX = touchMove.changedTouches["0"].pageX
+    console.log()
+    motionDesignPackage.style.transform =  `translate(${touchLocationX}px)`
+    console.log(touchMove.changedTouches["0"].pageX)
+    //menuOne.classList.toggle('active');
+    //menuTwo.classList.toggle('active');
+})
