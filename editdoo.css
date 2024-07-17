@@ -892,6 +892,25 @@ body{
         width: 30rem;
     }
 
+    .orderNTwo{
+        width: 30rem;
+     }
+
+     .orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+     }
+
+     .orderN .packagesTwo li,.orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+     }
+
+     .orderN .singleVideoEdit li,.orderNTwo .singleVideoEdit li{
+        font-size: 1.05rem;
+       
+     }
+
     .rightArrowButton{
         margin-left: 30.3rem;
      }
@@ -935,9 +954,7 @@ body{
     .navbar{
         display: none;
     }
-    .humburger-Menu{
-        
-    }
+
     .topPart{
         margin-left:0 ;
     }
@@ -963,7 +980,21 @@ body{
         width: 15rem;
         height: 17rem;
         flex-direction: column;
+        transform: translateX(-50rem);
     }
+
+    .orderNTwo{
+        width: 15rem;
+        height: 17rem;
+        flex-direction: column;
+        top: 5rem;
+        
+    }
+    
+    .orderNTwo.active{
+        transform: translateX(30rem);
+    }
+    
 
     .rightArrowButton{
         margin-left: 15.3rem;
