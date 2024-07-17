@@ -421,7 +421,7 @@ body{
     left: -2rem;
     rotate:180deg;
     cursor: pointer;
-    transition: 120ms ease;}
+    transition: 1200ms ease;}
 
 .leftArrowButton:active{
     transform: scale(0.90);
