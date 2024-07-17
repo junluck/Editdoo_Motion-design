@@ -259,7 +259,6 @@ body{
     transform: translateX(-100rem);
     transition: 1600ms ease;
     
-    
 }
 
 .orderN.active{
@@ -486,7 +485,8 @@ body{
         right: 1.5rem;
         
     }
-
+    
+    
     .orderN{
         width: 63rem;
      }
@@ -498,6 +498,9 @@ body{
 
      .rightArrowButton{
         margin-left: 63.5rem;
+     }
+     .orderNTwo{
+        width: 63rem;
      }
     .logo{
         
@@ -523,7 +526,9 @@ body{
     .orderN{
         width: 63rem;
      }
-
+     .orderNTwo{
+        width: 63rem;
+     }
      .orderNow{
         right:23.5rem ;
         padding-right: 0px;
@@ -578,6 +583,28 @@ body{
      .orderN{
         width: 57rem;
      }
+     .orderNTwo{
+        width: 57rem;
+     }
+
+     .orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+     }
+
+     .orderN .packagesTwo li,.orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+     }
+
+     .orderN .singleVideoEdit li,.orderNTwo .singleVideoEdit li{
+        font-size: 1.05rem;
+       
+     }
+     
+    
+    
+    
      .rightArrowButton{
         margin-left: 57.5rem;
      }
@@ -617,6 +644,32 @@ body{
         width: 50rem;
     }
 
+    .orderNTwo{
+        width: 50rem;
+     }
+
+     .orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+        margin-left: -2.2rem;
+     }
+
+     .orderN .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+        margin-left: -2.2rem;
+     }
+
+     .orderN .packagesTwo li,.orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+     }
+
+     .orderN .singleVideoEdit li,.orderNTwo .singleVideoEdit li{
+        font-size: 1.05rem;
+       
+     }
+     
     .rightArrowButton{
         margin-left: 50.3rem;
      }
@@ -705,6 +758,24 @@ body{
         
         
      }
+     .orderNTwo{
+        width: 35rem;
+     }
+
+     .orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+     }
+
+     .orderN .packagesTwo li,.orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+     }
+
+     .orderN .singleVideoEdit li,.orderNTwo .singleVideoEdit li{
+        font-size: 1.05rem;
+       
+     }
 
 }
 @media (min-width:591px) and (max-width:740px){
@@ -719,9 +790,6 @@ body{
         height: 2.75rem;
         font-size: 0.7rem;
     }
-    .topPart img{
-        margin-left: 0%;
-    }
 
     .logo{
         display: none;
@@ -735,6 +803,25 @@ body{
     .orderN{
         width: 35rem;
     }
+
+    .orderNTwo{
+        width: 35rem;
+     }
+
+     .orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+     }
+
+     .orderN .packagesTwo li,.orderNTwo .packagesTwo li{
+        font-size: 1rem;
+        width: 7rem;
+     }
+
+     .orderN .singleVideoEdit li,.orderNTwo .singleVideoEdit li{
+        font-size: 1.05rem;
+       
+     }
 
     .rightArrowButton{
         margin-left: 35.3rem;
@@ -789,7 +876,7 @@ body{
         font-size: 0.7rem;
     }
     .topPart img{
-        margin-left: 0%;
+       
     }
 
     .logo{
