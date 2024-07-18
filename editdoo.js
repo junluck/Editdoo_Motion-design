@@ -6,6 +6,7 @@ const sliderArrowOne = document.querySelector(".rightArrowButton")
 const sliderArrowTwo = document.querySelector('.leftArrowButton');
 const menuOne = document.querySelector('.orderN');
 const menuTwo = document.querySelector('.orderNTwo');
+let checkClick = false 
 
 //addeventlistener enable active class once element is clicked turning burger menu into an x
 humburger.addEventListener('click', () =>{
@@ -16,18 +17,18 @@ humburger.addEventListener('click', () =>{
 sliderArrowTwo.addEventListener('click',() =>{
     menuOne.classList.toggle('active');
     menuTwo.classList.toggle('active');
-    
+    checkClick = true
 
 })
 //addeventlistener enable active class once element is clicked moving the packge section
-let checkClick = false 
-sliderArrowOne.addEventListener('click',(click) =>{
+
+sliderArrowOne.addEventListener('click',() =>{
     menuOne.classList.toggle('active');
     menuTwo.classList.toggle('active');
     checkClick = true
 
 })
-//A function that checks if button has been pressed and if it has we rturn else we 
+//A function that checks if button has been pressed and if it has we rturn else
 function checkIfElementClicked(element,bool){
     if (bool === true){
         return
@@ -43,8 +44,7 @@ function checkIfElementClicked(element,bool){
 }
 
 // Invoking the checkIfElementClicked function  on the menus
-checkIfElementClicked(menuOne,checkClick)
-checkIfElementClicked(menuTwo,checkClick)
+
 
 
 /*menuTwo.addEventListener("touchmove",touchMove =>{
