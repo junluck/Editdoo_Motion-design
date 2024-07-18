@@ -28,12 +28,12 @@ body{
     width: 50px;
     position: relative;
     cursor: pointer;
-   
+    -webkit-tap-highlight-color: transparent;
 }
 
 
 .humburger-Menu span{
-    background-color: white;
+   background-color: white;
    position:absolute;
    height: 6px;
    border-radius: 20px;
@@ -43,6 +43,7 @@ body{
    transform:translate(-50%, -50%);
    transition: .3s ease;
    z-index: 2;
+   -webkit-tap-highlight-color: transparent;
 
 }
 .humburger-Menu span:nth-child(1){

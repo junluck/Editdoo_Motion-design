@@ -27,7 +27,7 @@ sliderArrowOne.addEventListener('click',(click) =>{
     checkClick = true
 
 })
-
+//A function that checks if button has been pressed and if it has we rturn else we 
 function checkIfElementClicked(element,bool){
     if (bool === true){
         return
@@ -42,6 +42,7 @@ function checkIfElementClicked(element,bool){
 
 }
 
+// Invoking the checkIfElementClicked function  on the menus
 checkIfElementClicked(menuOne,checkClick)
 checkIfElementClicked(menuTwo,checkClick)
 
