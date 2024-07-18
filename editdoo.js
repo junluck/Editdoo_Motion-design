@@ -6,6 +6,7 @@ const sliderArrowOne = document.querySelector(".rightArrowButton")
 const sliderArrowTwo = document.querySelector('.leftArrowButton');
 const menuOne = document.querySelector('.orderN');
 const menuTwo = document.querySelector('.orderNTwo');
+
 //addeventlistener enable active class once element is clicked turning burger menu into an x
 humburger.addEventListener('click', () =>{
     humburger.classList.toggle('active');
@@ -25,7 +26,20 @@ sliderArrowOne.addEventListener('click',() =>{
 
 })
 
-menuTwo.addEventListener("touchmove",touchMove =>{
+//If you want to use touch screen to swipe thru different packages
+menuOne.addEventListener("touchstart",() => {
+    menuOne.classList.toggle('active');
+    menuTwo.classList.toggle('active');
+
+})
+
+//If you want to use touch screen to swipe thru different packages
+menuTwo.addEventListener("touchstart", toucher => {
+    menuOne.classList.toggle('active');
+    menuTwo.classList.toggle('active');
+
+})
+/*menuTwo.addEventListener("touchmove",touchMove =>{
     touchMove.preventDefault()
     let motionDesignPackage = document.getElementById("orderNTwo")
     let touchLocationX = touchMove.changedTouches["0"].pageX
@@ -34,5 +48,5 @@ menuTwo.addEventListener("touchmove",touchMove =>{
     console.log(touchMove.changedTouches["0"].pageX)
     //menuOne.classList.toggle('active');
     //menuTwo.classList.toggle('active');
-})
+})*/
 

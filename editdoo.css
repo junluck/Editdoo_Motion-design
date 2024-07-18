@@ -16,10 +16,7 @@ body{
     width: auto;
     height: auto;
     overflow-x: clip;
-    
-   
 }
-
 .hum{
     display: flex;
     justify-content:  flex-start;
@@ -31,7 +28,7 @@ body{
     width: 50px;
     position: relative;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+   
 }
 
 
@@ -46,7 +43,6 @@ body{
    transform:translate(-50%, -50%);
    transition: .3s ease;
    z-index: 2;
-   
 
 }
 .humburger-Menu span:nth-child(1){
@@ -205,6 +201,7 @@ body{
 
 }
 
+
 .editing{
     margin-left: 15%;
 }
@@ -215,8 +212,7 @@ body{
    
 }
 
-.order{
-}
+
 
 .packagesSection{
     display:flex;
@@ -255,6 +251,7 @@ body{
     position: relative;
     transform: translateX(-100rem);
     transition: 1600ms ease;
+    
     
 }
 
@@ -416,12 +413,12 @@ body{
 
 .leftArrowButton{
     position: absolute;
-    -webkit-tap-highlight-color: transparent;
+   -webkit-tap-highlight-color: transparent;
     z-index: 1;
     left: -2rem;
     rotate:180deg;
     cursor: pointer;
-    transition: 1200ms ease;}
+    transition: 120ms ease;}
 
 .leftArrowButton:active{
     transform: scale(0.90);
@@ -437,7 +434,6 @@ body{
     position: absolute;
     transition: 1500ms ease;
     top: 7rem;
-    left: 1rem;
     
     
 }
@@ -458,14 +454,6 @@ body{
 }
 .rightArrowButton:active{
     transform: scale(0.90);
-}
-.dot{
-    background-color: red;
-    width: 4rem;
-    height: 4rem;
-    border-radius:50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
 }
 
 @media(min-width:1671px){
@@ -508,9 +496,7 @@ body{
      .orderNTwo{
         width: 63rem;
      }
-    .logo{
-        
-    }
+    
 } 
 
 @media(min-width:1301px) and (max-width:1440px){
@@ -543,9 +529,7 @@ body{
      .rightArrowButton{
         margin-left: 63.5rem;
      }
-    .logo{
-        
-    }
+    
 } 
 @media (min-width:1171px) and (max-width:1300px){
     
@@ -559,9 +543,7 @@ body{
     .topPart{
         margin-left: 0;
     }
-    .contact{
-        
-    }
+   
 
     .topPart img{
         margin-left: 0;
@@ -881,9 +863,7 @@ body{
         height: 2.75rem;
         font-size: 0.7rem;
     }
-    .topPart img{
-       
-    }
+    
 
     .logo{
         display: none;
