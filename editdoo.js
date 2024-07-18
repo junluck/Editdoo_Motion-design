@@ -20,25 +20,32 @@ sliderArrowTwo.addEventListener('click',() =>{
 
 })
 //addeventlistener enable active class once element is clicked moving the packge section
-sliderArrowOne.addEventListener('click',() =>{
+let checkClick = false 
+sliderArrowOne.addEventListener('click',(click) =>{
     menuOne.classList.toggle('active');
     menuTwo.classList.toggle('active');
+    checkClick = true
 
 })
 
-//If you want to use touch screen to swipe thru different packages
-menuOne.addEventListener("touchstart",() => {
-    menuOne.classList.toggle('active');
-    menuTwo.classList.toggle('active');
+function checkIfElementClicked(element,bool){
+    if (bool === true){
+        return
+    }
 
-})
+    else{
+        element.addEventListener("touchstart",() => {
+            menuOne.classList.toggle('active');
+            menuTwo.classList.toggle('active');
+        })
+    }
 
-//If you want to use touch screen to swipe thru different packages
-menuTwo.addEventListener("touchstart", toucher => {
-    menuOne.classList.toggle('active');
-    menuTwo.classList.toggle('active');
+}
 
-})
+checkIfElementClicked(menuOne,checkClick)
+checkIfElementClicked(menuTwo,checkClick)
+
+
 /*menuTwo.addEventListener("touchmove",touchMove =>{
     touchMove.preventDefault()
     let motionDesignPackage = document.getElementById("orderNTwo")
