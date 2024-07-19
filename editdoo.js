@@ -1,6 +1,7 @@
 
 //variable names with menu container class as the value
 const humburger = document.querySelector('.humburger-Menu');
+const hum = document.querySelector(".hum")
 const hiddenMenu = document.querySelector('.hidden-Menu');
 const sliderArrowOne = document.querySelector(".rightArrowButton")
 const sliderArrowTwo = document.querySelector('.leftArrowButton');
@@ -12,6 +13,7 @@ let checkClick = false
 humburger.addEventListener('click', () =>{
     humburger.classList.toggle('active');
     hiddenMenu.classList.toggle('active');
+    hum.classList.toggle("active");
 })
 //addeventlistener enable active class once element is clicked moving the packge section
 sliderArrowTwo.addEventListener('click',() =>{

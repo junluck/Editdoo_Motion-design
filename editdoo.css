@@ -23,6 +23,12 @@ body{
     align-items: flex-start;
     margin-left: 10%;
 }
+
+.hum.active{
+    position: fixed;
+    z-index: 2;
+}
+
 .humburger-Menu{
     height: 50px;
     width: 50px;
@@ -66,6 +72,7 @@ body{
 .humburger-Menu.active span:nth-child(3){
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
+   
 
 
 }
@@ -207,11 +214,14 @@ body{
     margin-left: 15%;
 }
 .mainHeading{
-    font-size: clamp(1rem,3.15vw + 1rem,10rem);
+    font-size: clamp(1rem,3.15vw + 0.9rem,10rem);
     margin-bottom: 0;
     
    
 }
+
+
+
 
 
 
@@ -446,27 +456,84 @@ body{
 }
 
 .rightArrowButton{
+    --glow-line-color:#ffffff;
+    --glow-line-thickness:2px;
+    --glow-blur-color:#ffffff;
+    --glow-line-length:20px;
+    --glow-blur-thickness:3px;
+    --container-offset: 100px;
+    --animation-speed: 1200ms;
     position: absolute;
     -webkit-tap-highlight-color: transparent;
     z-index: 1;
     margin-left: 80rem;
     cursor: pointer;
     transition: 120ms ease;
+    
 }
+.orderNTwo:is(:hover, :focus) .glow-container{
+    animation: glow-visibility var(--animation-speed) ease-in-out;
+}
+.glow-container{
+    inset: calc(var(--container-offset) / -2);
+    width: calc(100% + var(--container-offset));
+    height: calc(100% + var(--container-offset));
+    stroke: black;
+    stroke-width: 21px;
+    position: absolute;
+    opacity: 0;
+    
+    
+}
+
+.glow-blur,.glow-line{
+    rx:10rem;
+    width: calc(100% - var(--container-offset));
+    height: calc(97% - var(--container-offset));
+    x:calc(var(--container-offset) / 2);
+    y:calc(var(--container-offset) / 2.01);
+    fill: transparent;
+    stroke: black;
+    stroke-width:3px ;
+    stroke-dasharray: var(--glow-line-length) calc(50px - var(--glow-line-length)) ;
+    
+}
+
+
+.glow-blur{
+    filter: blur(3px);
+    stroke: var(--glow-blur-color);
+    stroke-width: 3px ;
+}
+
+.glow-line{
+    
+    stroke: var(--glow-line-color);
+    stroke-width: var(--glow-line-thickness);
+}
+.orderNTwo:is(:hover, :focus) :is(.glow-line, .glow-blur){
+    stroke: #ffffff;
+    stroke-dashoffset: -60px;
+    transition: stroke-dashoffset var(--animation-speed) ease-out;
+}
+
 .rightArrowButton:active{
     transform: scale(0.90);
 }
 
+@keyframes glow-visibility{
+    0%, 100%{ opacity: 0;}
+    25%, 75%{opacity: 1;}
+}
 @media(min-width:1671px){
-    .humburger-Menu{
+    .humburger-Menu,.hidden-Menu{
         display: none;
     }
-
-
+   
     
 }
 @media(min-width:1441px) and (max-width:1670px){
-    .humburger-Menu{
+    .humburger-Menu,.hidden-Menu{
         display:none;
       
     }
@@ -501,7 +568,7 @@ body{
 } 
 
 @media(min-width:1301px) and (max-width:1440px){
-    .humburger-Menu{
+    .humburger-Menu,.hidden-Menu{
         display:none;
       
     }
@@ -767,92 +834,9 @@ body{
      }
 
 }
-@media (min-width:591px) and (max-width:740px){
-    .navbar{
-        display: none;
-    }
-    .topPart{
-        margin-left:0 ;
-    }
-    .topPart .order{
-        width: 7.375rem;
-        height: 2.75rem;
-        font-size: 0.7rem;
-    }
 
-    .logo{
-        display: none;
-    }
 
-    .packagesSection{
-        margin-left: 8%;
-        align-items: center;
-    }
-
-    .orderN{
-        width: 35rem;
-    }
-
-    .orderNTwo{
-        width: 35rem;
-     }
-
-     .orderNTwo .packagesTwo li{
-        font-size: 1rem;
-        width: 7rem;
-     }
-
-     .orderN .packagesTwo li,.orderNTwo .packagesTwo li{
-        font-size: 1rem;
-        width: 7rem;
-     }
-
-     .orderN .singleVideoEdit li,.orderNTwo .singleVideoEdit li{
-        font-size: 1.05rem;
-       
-     }
-
-    .rightArrowButton{
-        margin-left: 35.3rem;
-     }
-
-     .singleVideoEdit{
-        width: 16rem;
-        left:17rem;
-     }
-
-     .packagesTwo{
-        width: 20rem;
-        right: 2rem;
-        display: none;
-        
-    }
-
-    .packagesTwo li{
-        font-size: 16px;
-    }
-
-    .packagesH{
-        font-size: 2rem;
-        margin-bottom: 3rem;
-    }
-    .orderNow{
-        right:8.7rem ;
-        padding-right: 0px;
-     }
-     .orderNow img{
-        width:11rem ;
-        
-        
-     }
-
-     .contact{
-        display: none;
-     }
-
-}
-
-@media (min-width:531px)and (max-width:590px){
+@media (min-width:585px)and (max-width:740px){
     .navbar{
         display: none;
     }
@@ -937,7 +921,7 @@ body{
      }
 
 }
-@media(max-width:530px){
+@media(max-width:584px){
     .navbar{
         display: none;
     }
@@ -946,14 +930,21 @@ body{
         margin-left:0 ;
     }
     .topPart .order{
-        width: 7.375rem;
-        height: 2.75rem;
-        font-size: 0.7rem;
+        width: 4.375rem;
+        height: 1.75rem;
+        font-size: 0.46rem;
     }
     .topPart img{
         margin-right: 10%;
     }
 
+    .topPart p{
+        line-height: 20px;
+    }
+    .hire{
+      font-size: 0.7rem;
+      
+    }
     .logo{
         display: none;
     }
