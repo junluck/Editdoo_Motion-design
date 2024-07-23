@@ -15,22 +15,22 @@ humburger.addEventListener('click', () =>{
     hiddenMenu.classList.toggle('active');
     hum.classList.toggle("active");
 })
-//addeventlistener enable active class once element is clicked moving the packge section
+//addeventlistener enable active class once element is clicked moving the motion design package section
 sliderArrowTwo.addEventListener('click',() =>{
     menuOne.classList.toggle('active');
     menuTwo.classList.toggle('active');
     checkClick = true
 
 })
-//addeventlistener enable active class once element is clicked moving the packge section
 
+//addeventlistener enable active class once element is clicked moving the video editing packge section
 sliderArrowOne.addEventListener('click',() =>{
     menuOne.classList.toggle('active');
     menuTwo.classList.toggle('active');
     checkClick = true
 
 })
-//A function that checks if button has been pressed and if it has we rturn else
+//A function that checks if button has been touched and if it has we rturn else we toggle active
 function checkIfElementClicked(element,bool){
     if (bool === true){
         return
