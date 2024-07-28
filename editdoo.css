@@ -252,19 +252,7 @@ body{
 
 }
 
-.orderN{
-    display: flex;
-    border: 3px solid white;
-    border-radius: 20px;
-    justify-content: center;
-    align-items: center;
-    width: 80rem;
-    position: relative;
-    transform: translateX(-100rem);
-    transition: 1600ms ease;
-    
-    
-}
+
 
 .orderN.active{
     transform: translateX(0rem);
@@ -423,6 +411,13 @@ body{
 }
 
 .leftArrowButton{
+    --glow-line-color:#ffffff;
+    --glow-line-thickness:2px;
+    --glow-blur-color:#ffffff;
+    --glow-line-length:30px;
+    --glow-blur-thickness:3px;
+    --container-offset: 100px;
+    --animation-speed: 1200ms;
     position: absolute;
    -webkit-tap-highlight-color: transparent;
     z-index: 1;
@@ -434,7 +429,19 @@ body{
 .leftArrowButton:active{
     transform: scale(0.90);
 }
-
+.orderN{
+    display: flex;
+    border: 3px solid white;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    position: relative;
+    transform: translateX(-160%);
+    transition: 1300ms ease;
+    
+    
+}
 .orderNTwo{
     display: flex;
     border: 3px solid white;
@@ -443,14 +450,14 @@ body{
     align-items: center;
     width: 80rem;
     position: absolute;
-    transition: 1500ms ease;
+    transition: 1300ms ease;
     top: 7rem;
     
     
 }
 
 .orderNTwo.active{
-    transform: translateX(130%) ;
+    transform: translateX(160%) ;
 
     
 }
@@ -459,7 +466,7 @@ body{
     --glow-line-color:#ffffff;
     --glow-line-thickness:2px;
     --glow-blur-color:#ffffff;
-    --glow-line-length:20px;
+    --glow-line-length:30px;
     --glow-blur-thickness:3px;
     --container-offset: 100px;
     --animation-speed: 1200ms;
@@ -471,7 +478,7 @@ body{
     transition: 120ms ease;
     
 }
-.orderNTwo:is(:hover, :focus) .glow-container{
+.orderNTwo:is(:hover, :focus) .glow-container,.orderN:is(:hover, :focus) .glow-container{
     animation: glow-visibility var(--animation-speed) ease-in-out;
 }
 .glow-container{
@@ -514,6 +521,12 @@ body{
 .orderNTwo:is(:hover, :focus) :is(.glow-line, .glow-blur){
     stroke: #ffffff;
     stroke-dashoffset: -60px;
+    transition: stroke-dashoffset var(--animation-speed) ease-out;
+}
+
+.orderN:is(:hover, :focus) :is(.glow-line, .glow-blur){
+    stroke: #ffffff;
+    stroke-dashoffset: 60px;
     transition: stroke-dashoffset var(--animation-speed) ease-out;
 }
 
@@ -958,7 +971,7 @@ body{
         width: 15rem;
         height: 17rem;
         flex-direction: column;
-        transform: translateX(-50rem);
+       
     }
 
     .orderNTwo{
