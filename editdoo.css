@@ -7,7 +7,7 @@ body{
     background-color: #060B29;
     background-image: url("./Resources/Background.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto-fit;
     background-position-x: center;
     color: white;
     font-family:'helvetica' ;
@@ -107,6 +107,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between; 
+    
  }
  
 .list{
@@ -172,10 +173,12 @@ body{
 }
 
 .topPart{
+    margin-left: auto;
+    margin-right: auto;
     display:grid;
+    grid-template-columns: 40% 60%;
     margin-top: 5%;
-    margin-left: 5%;
-    grid-template-columns: 50% 50%;
+    width: 70%;
     
 }
 .topPart p{
@@ -201,17 +204,19 @@ body{
 
    width: 110%;
    height: 100%;
-   margin-left:-13% ;
+  
+   grid-column-start: 2;
+   grid-column-end: 3;
    
-
-   
-   
-
 }
 
 
 .editing{
-    margin-left: 15%;
+   grid-column-start: 1;
+   grid-column-end: 2;
+  
+   width: 100%;
+   
 }
 .mainHeading{
     font-size: clamp(1rem,3.15vw + 0.9rem,10rem);
@@ -228,12 +233,14 @@ body{
 .packagesSection{
     display:flex;
     flex-direction: column;
-    align-items:flex-start;
+    align-items:center;
     justify-content: center;
     width: 80%;
-    margin-left: 15%;
-    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
+    margin-top: 10%;
+   
     
    
 }
@@ -314,6 +321,7 @@ body{
     backdrop-filter: blur(7px);
     border: 1px solid;
     border-color: rgb(255, 255, 255, 0.089);
+   
     font-size: clamp(10px,100%,100px);
 }
 .packagesTwo h3{
@@ -533,6 +541,99 @@ body{
 .rightArrowButton:active{
     transform: scale(0.90);
 }
+.ourWorkSec{
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.ourWorkSec .heading{
+    font-size: 40px;
+
+}
+.ourWorkBox{
+    display: flex;
+    flex-direction: row;
+    border: #ffffff 17px solid;
+    border-radius: 30px;
+    right: -2%;
+    width: 100%;
+    margin-right: -20%;
+   
+}
+.outerBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width:20%;
+    border: 3px solid white;
+    border-radius: 20px;
+    height: 15rem;
+    align-self: center;
+    margin-left: 5%;
+
+ 
+   
+}
+
+.innerBox{
+   display: grid;
+   grid-template-columns: 50% 50%;
+   grid-template-rows: 30% 40% 15% 15%;
+   justify-items: center;
+   align-items: center;
+   margin-top: auto;
+   margin-bottom: auto;
+   backdrop-filter: blur(7px);
+   border: 1px solid;
+   border-color: rgb(255, 255, 255, 0.089);
+   background-color:rgba(255, 255, 255, 0.089);
+    border-radius: 20px;
+    width: 80%;
+    height: 200%;
+    position: absolute;
+
+}
+.ourMission{
+    font-size: 20px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    line-height: 150%;
+
+}
+.wantToSeeMore{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+}
+
+.click{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    background-color: #0C7EEF;
+    border-radius: 30px;
+    width: 8rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.phoneVideo{
+    width: 70%;
+    margin-left: 15%;
+}
 
 @keyframes glow-visibility{
     0%, 100%{ opacity: 0;}
@@ -550,33 +651,7 @@ body{
         display:none;
       
     }
-    .packagesSection{
-       margin-left:20%;
-       
-    }
-
-    .packagesTwo{
-        width: 26rem;
-        right: 1.5rem;
-        
-    }
-    
-    
-    .orderN{
-        width: 63rem;
-     }
-
-     .orderNow{
-        right:23.5rem ;
-        padding-right: 0px;
-     }
-
-     .rightArrowButton{
-        margin-left: 63.5rem;
-     }
-     .orderNTwo{
-        width: 63rem;
-     }
+ 
     
 } 
 
@@ -585,30 +660,26 @@ body{
         display:none;
       
     }
-    .packagesSection{
-       margin-left:15%;
-       
-    }
 
     .packagesTwo{
-        width: 26rem;
+        width: 36rem;
         right: 1.5rem;
         
     }
 
     .orderN{
-        width: 63rem;
+        width: 73rem;
      }
      .orderNTwo{
-        width: 63rem;
+        width: 73rem;
      }
      .orderNow{
-        right:23.5rem ;
+        right:27.5rem ;
         padding-right: 0px;
      }
 
      .rightArrowButton{
-        margin-left: 63.5rem;
+        margin-left: 73.5rem;
      }
     
 } 
@@ -621,27 +692,18 @@ body{
     .humburger-Menu{
         margin-left: 0rem;
     }
-    .topPart{
-        margin-left: 0;
-    }
+  
    
 
-    .topPart img{
-        margin-left: 0;
-        width: 100%;
-    }
+ 
     .logo{
         height: 80%;
         width: 9.3%;
     }
 
-    .packagesSection{
-        margin-left: 15%;
-       
-        
-    }
+
     .packagesTwo{
-        width: 23rem;
+        width: 33rem;
         right: 2rem;
         
     }
@@ -650,20 +712,20 @@ body{
         font-size: 2.2rem;
     }
      .orderN{
-        width: 57rem;
+        width: 67rem;
      }
      .orderNTwo{
-        width: 57rem;
+        width: 67rem;
      }
 
      .orderNTwo .packagesTwo li{
         font-size: 1rem;
-        width: 7rem;
+       
      }
 
      .orderN .packagesTwo li,.orderNTwo .packagesTwo li{
         font-size: 1rem;
-        width: 7rem;
+        
      }
 
      .orderN .singleVideoEdit li,.orderNTwo .singleVideoEdit li{
@@ -675,11 +737,11 @@ body{
     
     
      .rightArrowButton{
-        margin-left: 57.5rem;
+        margin-left: 67.5rem;
      }
 
      .orderNow{
-        right:21rem ;
+        right:26rem ;
         padding-right: 0px;
      }
     
@@ -695,16 +757,8 @@ body{
     .navbar{
         display: none;
     }
-    .topPart{
-        margin-left:0 ;
-    }
-    .topPart img{
-        margin-left: -20%;
-    }
-    .packagesSection{
-        margin-left: 8%;
-    }
-
+  
+    
     .logo{
         display: none;
     }
@@ -775,17 +829,8 @@ body{
     .navbar{
         display: none;
     }
-    .topPart{
-        margin-left:0 ;
-    }
-    .topPart img{
-        margin-left: -20%;
-    }
-    .packagesSection{
-        margin-left: 10%;
-        align-items: center;
-    }
-
+   
+    
     .logo{
         display: none;
     }
@@ -853,25 +898,24 @@ body{
     .navbar{
         display: none;
     }
-    .topPart{
-        margin-left:0 ;
-    }
+
     .topPart .order{
         width: 7.375rem;
         height: 2.75rem;
         font-size: 0.7rem;
     }
     
-
+    .topPart p{
+        font-size: 0.9rem;
+    }
     .logo{
         display: none;
     }
 
-    .packagesSection{
-        margin-left: 12%;
-        align-items: center;
+ 
+    .mainHeading{
+        font-size:1.8rem;
     }
-
     .orderN{
         width: 30rem;
     }
@@ -939,32 +983,34 @@ body{
         display: none;
     }
 
-    .topPart{
-        margin-left:0 ;
-    }
     .topPart .order{
         width: 4.375rem;
         height: 1.75rem;
         font-size: 0.46rem;
+    }
+    
+    .mainHeading{
+        font-size: clamp(0.8rem,3vw + 0.39rem,5rem);
     }
     .topPart img{
         margin-right: 10%;
     }
 
     .topPart p{
-        line-height: 20px;
+        line-height: 10px;
+        font-size: clamp(0.5rem,0.5vw + 0.39rem,1.5rem);
     }
+
+    .topPart .order{
+        margin-top: 0.5rem;
+    }
+   
     .hire{
       font-size: 0.7rem;
       
     }
     .logo{
         display: none;
-    }
-
-    .packagesSection{
-        margin-left: 10%;
-        align-items: center;
     }
 
     .orderN{
