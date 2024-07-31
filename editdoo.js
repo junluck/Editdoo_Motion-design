@@ -49,12 +49,6 @@ pauseButton.addEventListener('click',() =>{
     
 })
 
-function VideoTimline(video){
-
-  
-
-}
-
 const groupOfVideos = [{
     _name: phoneVideo,
     _duration: 18.87,
@@ -81,36 +75,78 @@ const groupOfVideos = [{
 
 function updateEndDuration(video){
     let videoDuration = video.duration;
-    function convertToSecFormat(video){
-    let inMin = (video / 100).toFixed(2);
-    console.log(inMin);
-    let arrayOfSec = [...inMin];
-    console.log(arrayOfSec);
-    let convertedSeconds = "";
-    for(let i = 0; i < arrayOfSec.length; i++)
-    {
-        if (arrayOfSec[i] === '.'){
 
-            arrayOfSec[i] = ":";
+    function convertToSecFormat(videoTimerNumber){
+        let inMin = (videoTimerNumber / 100).toFixed(2);
+        console.log(inMin);
+        let arrayOfSec = [...inMin];
+        console.log(arrayOfSec);
+        let convertedSeconds = "";
+        for(let i = 0; i < arrayOfSec.length; i++)
+        {
+            if (arrayOfSec[i] === '.'){
+
+                arrayOfSec[i] = ":";
+            }
+
+            convertedSeconds += arrayOfSec[i];
+
+        
+
+        
         }
-
-        convertedSeconds += arrayOfSec[i];
-
-    
-
-    
-    }
-    return convertedSeconds;
-
-}
-
-    video.name.onplaying = () => {
-        setInterval(()=>{
-            video.startTimer.innerHTML = `${video.name.currentTime}`;
-        },1000)
+        return convertedSeconds;
 
     }
-    video.endTimer.innerHTML = convertedSeconds;
+
+    let  interValTimer = undefined;
+    video.name.addEventListener("playing", (click) => {
+       
+        interValTimer = setInterval(() => {
+
+        if(video.name.currentTime === video.name.duration){
+            playButton.style.display = 'flex';
+            pauseButton.style.display = 'none';
+        }
+        
+        let num =  video.name.currentTime;
+        let currentTime = convertToSecFormat(num);
+        video.startTimer.innerHTML = `${currentTime}`;
+        let percentage = (num / videoDuration) * 100;
+        circle.style.left = `${percentage - 2}%`;
+        blueBarline.style.transform = `scaleX(${percentage}%)`;
+        
+
+            
+            
+        },1)
+    })
+
+    video.name.addEventListener("pause", (click) => {
+
+      clearInterval(interValTimer)
+    })
+    let endNumber = convertToSecFormat(videoDuration)
+    video.endTimer.innerHTML = endNumber;
+
+    const whiteBarline = document.querySelector('.timeLineBarWhite');
+    const blueBarline = document.querySelector('.timeLineBarBlue');
+    const circle = document.querySelector('.circle');
+    const circleCor = circle.getBoundingClientRect().right;
+    const whiteBarlineCor = whiteBarline.getBoundingClientRect().right;
+    const totalPixels = whiteBarlineCor - circleCor;
+    let mouseCordinates = 0
+
+    document.querySelector(".playBarLine").addEventListener('click',(event) => {
+    mouseCordinates = event.clientX
+    circle.style.left = `${((mouseCordinates - circleCor) / totalPixels )* 100}%`
+    groupOfVideos[0].name.currentTime = groupOfVideos[0].duration *((((mouseCordinates - circleCor) / totalPixels )* 100)/ 100);
+    let currentTime = convertToSecFormat(groupOfVideos[0].duration *((((mouseCordinates - circleCor) / totalPixels )* 100)/ 100))
+    video.startTimer.innerHTML = `${currentTime}`;
+    blueBarline.style.transform = `scaleX(${((mouseCordinates - circleCor) / totalPixels )* 102}%)`
+        
+        
+    })
 
 }
 
@@ -119,25 +155,9 @@ updateEndDuration(groupOfVideos[0])
 
 
 
-const whiteBarline = document.querySelector('.timeLineBarWhite');
-const blueBarline = document.querySelector('.timeLineBarBlue');
-const circle = document.querySelector('.circle');
-const circleCor = circle.getBoundingClientRect().right;
-const whiteBarlineCor = whiteBarline.getBoundingClientRect().right;
-const totalPixels = whiteBarlineCor - circleCor;
-let mouseCordinates = 0
-document.querySelector(".playBarLine").addEventListener('click',(event) => {
-    mouseCordinates = event.clientX
-    circle.style.left = `${((mouseCordinates - circleCor) / totalPixels )* 100}%`
-    groupOfVideos[0].name.currentTime = groupOfVideos[0].duration *((((mouseCordinates - circleCor) / totalPixels )* 100)/ 100);
-    blueBarline.style.transform = `scaleX(${((mouseCordinates - circleCor) / totalPixels )* 101}%)`
-    
-    
-})
 
-circle.addEventListener('mousedown',() => {
-  
-})
+
+
 
 
 

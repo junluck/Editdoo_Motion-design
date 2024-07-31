@@ -673,7 +673,7 @@ body:not(.ourWorkBox){
     position: relative;
     width: 40vw;
     height: 1rem;
-    background-color: black;
+  
 }
 
 .timerStart{
