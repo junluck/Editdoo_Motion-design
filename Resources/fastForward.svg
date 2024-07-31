@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 59">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Skip_Forward" data-name="Skip Forward">
+    <g id="Ellipse_27" data-name="Ellipse 27">
+      <circle class="cls-1" cx="29.5" cy="29.5" r="29.5"/>
+      <circle class="cls-3" cx="29.5" cy="29.5" r="28.5"/>
+    </g>
+    <path id="Polygon_13" data-name="Polygon 13" class="cls-2" d="M36.79,25.43c2.33,1.48,3.02,4.57,1.54,6.9-.46.72-1.09,1.31-1.85,1.72l-14.39,7.77c-2.43,1.31-5.46.41-6.77-2.02-.42-.78-.63-1.66-.6-2.55l.58-16.53c.1-2.76,2.41-4.92,5.17-4.82.89.03,1.75.3,2.5.77l13.81,8.76Z"/>
+    <path id="Polygon_12" data-name="Polygon 12" class="cls-2" d="M47.15,25.43c2.33,1.48,3.02,4.57,1.54,6.9-.46.72-1.09,1.31-1.85,1.72l-14.39,7.77c-2.43,1.31-5.46.41-6.77-2.02-.42-.78-.63-1.66-.6-2.55l.58-16.53c.1-2.76,2.41-4.92,5.17-4.82.89.03,1.75.3,2.5.77l13.81,8.76Z"/>
+  </g>
+</svg>
