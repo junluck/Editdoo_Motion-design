@@ -113,8 +113,8 @@ function updateEndDuration(video){
         let currentTime = convertToSecFormat(num);
         video.startTimer.innerHTML = `${currentTime}`;
         let percentage = (num / videoDuration) * 100;
-        circle.style.left = `${percentage - 2}%`;
-        blueBarline.style.transform = `scaleX(${percentage}%)`;
+        circle.style.left = `${percentage}%`;
+        blueBarline.style.width= `${percentage+1}%`;
         
 
             
@@ -137,13 +137,26 @@ function updateEndDuration(video){
     const totalPixels = whiteBarlineCor - circleCor;
     let mouseCordinates = 0
 
+   
+
     document.querySelector(".playBarLine").addEventListener('click',(event) => {
-    mouseCordinates = event.clientX
-    circle.style.left = `${((mouseCordinates - circleCor) / totalPixels )* 100}%`
+    mouseCordinates = event.clientX 
+    console.log(mouseCordinates)
     groupOfVideos[0].name.currentTime = groupOfVideos[0].duration *((((mouseCordinates - circleCor) / totalPixels )* 100)/ 100);
     let currentTime = convertToSecFormat(groupOfVideos[0].duration *((((mouseCordinates - circleCor) / totalPixels )* 100)/ 100))
     video.startTimer.innerHTML = `${currentTime}`;
-    blueBarline.style.transform = `scaleX(${((mouseCordinates - circleCor) / totalPixels )* 102}%)`
+    let cordinates = ((mouseCordinates - circleCor) / totalPixels )* 100;
+    if (cordinates <= 0){
+        blueBarline.style.width = `0%`;
+        circle.style.left = `0%`
+    }
+
+    else if (cordinates > 0 && cordinates <= 100){
+        let copyOfMouscor = mouseCordinates - 2;
+        blueBarline.style.width= `${((mouseCordinates - circleCor) / totalPixels )* 102}%`;
+        circle.style.left = `${((copyOfMouscor - circleCor) / totalPixels )* 99.5}%`
+    }
+    console.log(cordinates);
         
         
     })
@@ -159,8 +172,7 @@ updateEndDuration(groupOfVideos[0])
 
 
 
-
+groupOfVideos[0].name.muted = true;
 
 console.log(whiteBarline.getBoundingClientRect())
 console.log(circle.getBoundingClientRect())
-   

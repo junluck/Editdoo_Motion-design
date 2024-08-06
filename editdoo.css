@@ -694,6 +694,8 @@ body:not(.ourWorkBox){
     cursor: pointer;
     transform: translateX(0px);
 }
+
+
 .timeLineBarWhite{
     width: 100%;
     height: 30%;
@@ -707,16 +709,18 @@ body:not(.ourWorkBox){
 }
 
 .timeLineBarBlue{
-    width: 100%;
+    width: 0%;
     height: 30%;
+    left: 0;
     border-radius: 10px;
     position: absolute;
     background-color: #7f73e2;
     bottom: 30%;
     transform-origin: top left;
-    transform: scaleX(0%);
+   
     z-index: 1;
     cursor: pointer;
+    overflow: hidden;
 
 }
 
@@ -1167,6 +1171,7 @@ body:not(.ourWorkBox){
      }
 
      .singleVideoEdit{
+        
         width: 13rem;
         height: 16rem;
         left:1rem;
