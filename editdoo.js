@@ -31,9 +31,13 @@ sliderArrowOne.addEventListener('click',() =>{
 
 })
 
+//storing play and pause element button in variables
 const playButton = document.querySelector('.playButton');
 const pauseButton = document.querySelector('.pauseButton');
+//storing video element in variable
 const phoneVideo = document.querySelector('.phoneVideo');
+
+//add event listener to play button and play video when clicked
 playButton.addEventListener('click',() =>{
     phoneVideo.play();
     playButton.style.display = 'none';
@@ -42,6 +46,7 @@ playButton.addEventListener('click',() =>{
     
 })
 
+//add event listener to pause button and pause video when clicked
 pauseButton.addEventListener('click',() =>{
     phoneVideo.pause();
     playButton.style.display = 'flex';
@@ -49,6 +54,7 @@ pauseButton.addEventListener('click',() =>{
     
 })
 
+//group videos up and sort in array of objects
 const groupOfVideos = [{
     _name: phoneVideo,
     _duration: 18.87,
@@ -73,6 +79,26 @@ const groupOfVideos = [{
 
 }]
 
+//store playback bar and  playback button in variables
+const whiteBarline = document.querySelector('.timeLineBarWhite');
+const blueBarline = document.querySelector('.timeLineBarBlue');
+const circle = document.querySelector('.circle');
+let circleCor = circle.getBoundingClientRect().right;
+let whiteBarlineCor = whiteBarline.getBoundingClientRect().right;
+let whiteBarlineCorLeft = whiteBarline.getBoundingClientRect().left;
+
+//size of window screen stored in a variable
+let screenWidth = window.screen.width;
+
+//getting window width if window is resized
+window.addEventListener('resize', () => {
+    screenWidth = window.screen.width;
+})
+
+//intialializing mouseCordinates variable and assigning it to 0
+let mouseCordinates = 0
+
+//declaring a function that will upadte time of video and alow user to move play head to any point on timeline
 function updateEndDuration(video){
     let videoDuration = video.duration;
 
@@ -100,8 +126,9 @@ function updateEndDuration(video){
     }
 
     let  interValTimer = undefined;
-    video.name.addEventListener("playing", (click) => {
-       
+    video.name.addEventListener("playing", (event) => {
+        playButton.style.display = 'none';
+        pauseButton.style.display = 'flex';
         interValTimer = setInterval(() => {
 
         if(video.name.currentTime === video.name.duration){
@@ -113,16 +140,16 @@ function updateEndDuration(video){
         let currentTime = convertToSecFormat(num);
         video.startTimer.innerHTML = `${currentTime}`;
         let percentage = (num / videoDuration) * 100;
-        circle.style.left = `${percentage}%`;
-        blueBarline.style.width= `${percentage+1}%`;
+        circle.style.left = `${percentage - 2}%`;
+        blueBarline.style.width= `${percentage}%`;
         
 
             
             
         },1)
     })
-
-    video.name.addEventListener("pause", (click) => {
+   
+    video.name.addEventListener("pause", (event) => {
 
       clearInterval(interValTimer)
     })
@@ -134,45 +161,140 @@ function updateEndDuration(video){
     const circle = document.querySelector('.circle');
     const circleCor = circle.getBoundingClientRect().right;
     const whiteBarlineCor = whiteBarline.getBoundingClientRect().right;
-    const totalPixels = whiteBarlineCor - circleCor;
     let mouseCordinates = 0
-
-   
-
+    
     document.querySelector(".playBarLine").addEventListener('click',(event) => {
-    mouseCordinates = event.clientX 
-    console.log(mouseCordinates)
-    groupOfVideos[0].name.currentTime = groupOfVideos[0].duration *((((mouseCordinates - circleCor) / totalPixels )* 100)/ 100);
-    let currentTime = convertToSecFormat(groupOfVideos[0].duration *((((mouseCordinates - circleCor) / totalPixels )* 100)/ 100))
-    video.startTimer.innerHTML = `${currentTime}`;
-    let cordinates = ((mouseCordinates - circleCor) / totalPixels )* 100;
+    mouseCordinates = ((event.clientX - whiteBarline.getBoundingClientRect().left) / (whiteBarline.getBoundingClientRect().right - whiteBarline.getBoundingClientRect().left)) * 100;
+    groupOfVideos[0].name.currentTime = groupOfVideos[0].duration *(mouseCordinates/ 100);
+    let currentTime = convertToSecFormat(groupOfVideos[0].duration *(mouseCordinates/ 100));
+    let cordinates = mouseCordinates;
+    console.log(screenWidth)
+    if (screenWidth <= 1000){
+        cordinates -= 300; 
+    }
+
     if (cordinates <= 0){
         blueBarline.style.width = `0%`;
         circle.style.left = `0%`
+        video.startTimer.innerHTML = `${convertToSecFormat(0)}`;
     }
 
     else if (cordinates > 0 && cordinates <= 100){
-        let copyOfMouscor = mouseCordinates - 2;
-        blueBarline.style.width= `${((mouseCordinates - circleCor) / totalPixels )* 102}%`;
-        circle.style.left = `${((copyOfMouscor - circleCor) / totalPixels )* 99.5}%`
+        blueBarline.style.width= `${cordinates}%`;
+        circle.style.left = `${cordinates - 2}%`
+        video.startTimer.innerHTML = `${currentTime}`;
     }
-    console.log(cordinates);
+
+
+
         
         
     })
 
 }
 
-
+//invoking the function onto the active video on the screen
 updateEndDuration(groupOfVideos[0])
 
+groupOfVideos[0].name.volume = 0.01
+const volume = document.querySelector(".volume");
 
 
 
 
 
+//groupOfVideos[0].name.muted = true;
 
-groupOfVideos[0].name.muted = true;
+let isMouseDown = false;
+let isMouseDownTwo = false
 
-console.log(whiteBarline.getBoundingClientRect())
-console.log(circle.getBoundingClientRect())
+
+circle.addEventListener('mousedown', () =>{
+    isMouseDown = true;
+    phoneVideo.pause();
+    playButton.style.display = 'flex';
+    pauseButton.style.display = 'none';
+})
+
+document.addEventListener('mouseup', () =>{
+    isMouseDown = false;
+    if (isMouseDownTwo){
+       
+    }
+
+})
+
+circle.addEventListener('mouseup', () =>{
+    //playButton.style.display = 'none';
+    //pauseButton.style.display = 'flex';
+    isMouseDownTwo = true;
+    
+    
+})
+
+
+document.querySelector(".playBarLine").addEventListener('mousemove', (event) =>{
+    let percentage = (event.clientX - whiteBarline.getBoundingClientRect().left) / (whiteBarline.getBoundingClientRect().right - whiteBarline.getBoundingClientRect().left) * 100;
+    if (percentage < 0){
+        percentage = 0;
+    }
+    else if (percentage > 100){
+        percentage = 100;
+    }
+    if (isMouseDown){
+        console.log(percentage);
+        circle.style.left = `${percentage - 2}%`;
+        blueBarline.style.width =`${percentage + 1}%`;
+        groupOfVideos[0].name.currentTime = groupOfVideos[0].duration * percentage / 100;
+        
+    }
+
+})
+
+
+function volumEditor(video){
+    
+    let rangeValue = document.querySelector(".volume");
+    let clicker = true;
+    rangeValue.addEventListener("mousedown",()=>{
+        clicker = true;
+    })
+
+    rangeValue.addEventListener("mouseup",()=>{
+        clicker = false;
+    })
+    rangeValue.addEventListener("click",()=>{
+        video.name.volume = rangeValue.value / 100;
+        
+    })
+    rangeValue.addEventListener("mousemove",()=>{
+        video.name.volume = rangeValue.value / 100;
+        
+        
+        
+    })
+
+    
+   
+}
+
+
+
+volumEditor(groupOfVideos[0]);
+
+/*function logger (){
+    circle.style.left = `${80}%`
+}
+
+
+function mouseDown(event){
+    window.addEventListener('mousemove', logger)
+}
+
+function mouseup(event){
+    window.removeEventListener('mousemove', logger)
+}
+
+window.addEventListener('mousedown', mouseDown)
+window.addEventListener('mouseup', mouseup)
+*/
