@@ -54,30 +54,36 @@ pauseButton.addEventListener('click',() =>{
     
 })
 
-//group videos up and sort in array of objects
-const groupOfVideos = [{
-    _name: phoneVideo,
-    _duration: 18.87,
-    _startTimer: document.getElementById('timerStart'),
-    _endTimer: document.getElementById('timerEnd'),
-
-    get duration(){
-        return this._duration
-    },
-
-    get name(){
-        return this._name
-    },
-
-    get startTimer(){
-        return this._startTimer
-    },
-
-    get endTimer(){
-        return this._endTimer
+class Video {
+    constructor(video, duration){
+        this._name = video;
+        this._duration = duration;
+        this._startTimer = document.getElementById('timerStart');
+        this._endTimer = document.getElementById('timerEnd');
     }
+        get duration(){
+            return this._duration
+        }
+    
+        get name(){
+            return this._name
+        }
+    
+        get startTimer(){
+            return this._startTimer
+        }
+    
+        get endTimer(){
+            return this._endTimer
+        }
+    
+    
 
-}]
+
+}
+const videoOneObject = new Video(phoneVideo, 18.87)
+//group videos up and sort in array of objects
+const groupOfVideos = [videoOneObject]
 
 //store playback bar and  playback button in variables
 const whiteBarline = document.querySelector('.timeLineBarWhite');
@@ -244,7 +250,7 @@ document.querySelector(".playBarLine").addEventListener('mousemove', (event) =>{
     if (isMouseDown){
         console.log(percentage);
         circle.style.left = `${percentage - 2}%`;
-        blueBarline.style.width =`${percentage + 1}%`;
+        blueBarline.style.width =`${percentage}%`;
         groupOfVideos[0].name.currentTime = groupOfVideos[0].duration * percentage / 100;
         
     }
@@ -256,25 +262,27 @@ function volumEditor(video){
     
     let rangeValue = document.querySelector(".volume");
     let clicker = true;
-    rangeValue.addEventListener("mousedown",()=>{
-        clicker = true;
+    let progress = document.querySelector(".volumeBlueBar")
+
+    rangeValue.oninput = function(){
+        progress.value = rangeValue.value;
+        video.name.volume = progress.value / 100;
+    }
+
+    progress.addEventListener("click", (event)=>{
+        let sizeOfBar = rangeValue.getBoundingClientRect().right -  rangeValue.getBoundingClientRect().left ;
+        let mousePosition = event.clientX - rangeValue.getBoundingClientRect().left;
+        let mousePercent = mousePosition / sizeOfBar  * 100;
+        rangeValue.value = mousePercent;
+        progress.value = mousePercent;
+        video.name.volume = progress.value / 100;
+        console.log(rangeValue.getBoundingClientRect().right)
+        console.log(mousePercent );
     })
 
-    rangeValue.addEventListener("mouseup",()=>{
-        clicker = false;
+    rangeValue.addEventListener("input", () =>{
+        console.log(rangeValue.value)
     })
-    rangeValue.addEventListener("click",()=>{
-        video.name.volume = rangeValue.value / 100;
-        
-    })
-    rangeValue.addEventListener("mousemove",()=>{
-        video.name.volume = rangeValue.value / 100;
-        
-        
-        
-    })
-
-    
    
 }
 

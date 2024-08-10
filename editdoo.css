@@ -322,7 +322,6 @@ body:not(.ourWorkBox){
     backdrop-filter: blur(7px);
     border: 1px solid;
     border-color: rgb(255, 255, 255, 0.089);
-   
     font-size: clamp(10px,100%,100px);
 }
 .packagesTwo h3{
@@ -678,9 +677,24 @@ body:not(.ourWorkBox){
 
 .timerStart{
     margin-right: 2%;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
+            z-index: 1;
+
 }
 .timerEnd{
     margin-left: 2%;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none;
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
+            z-index: 1;
 }
 
 .circle{
@@ -769,6 +783,12 @@ body:not(.ourWorkBox){
 }
 
 .volumeBarAndIcon{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -783,12 +803,16 @@ body:not(.ourWorkBox){
     width: 20px;
 }
 
+.playHead{
+    max-width: 850px;
+}
+
 input{
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
     height: 5px;
-    background-color: white;
+    background-color:transparent;
     outline: none;
     opacity: 1;
     transition: opacity .15s ease-in-out;
@@ -802,32 +826,59 @@ input{
     height: 15px;
     width: 15px;
     border-radius: 10px;
-
-  }
-
-  input::-moz-range-thumb{
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
+    z-index: 1;
+    position: relative;
     cursor: pointer;
-    border-radius: 50%;
+
   }
+
 .volumeBar{
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
+    width: 4rem;
+    left: 0%;
+    cursor: pointer;
 }
 
 .volumeBlueBar{
     position: absolute;
-    background-color: #0C7EEF;
-    width: 80%;
+    background-color: #7f73e2;
+    width: 93%;
     height: 5px;
     justify-self: center;
     border-radius:10px ;
-    left: 0%;
+    left: 4%;
+    z-index: 0;
+    opacity:1;
+    transform-origin: top left;
+
     
+}
+
+.volumeBlueBar::-webkit-progress-bar{
+    background-color: white;
+    border-radius:10px ;
+}
+
+.volumeBlueBar::-webkit-progress-value{
+    background-color: #7f73e2;;
+    border-radius:10px ;
+}
+
+.videos{
+    background-color: transparent;
+    position: relative;
+  
+}
+
+.volumeIcon{
+    -webkit-user-drag: none; 
+    -khtml-user-drag: none;  
+    -moz-user-drag: none;    
+    -o-user-drag: none;      
+     user-drag: none;  
 }
 
 @keyframes glow-visibility{
@@ -839,6 +890,7 @@ input{
         display: none;
     }
    
+
     
 }
 @media(min-width:1441px) and (max-width:1670px){
@@ -846,6 +898,11 @@ input{
         display:none;
       
     }
+
+    .innerBox{
+        width: 80%;
+        height: 180%;
+     }
  
     
 } 
@@ -875,6 +932,16 @@ input{
 
      .rightArrowButton{
         margin-left: 73.5rem;
+     }
+
+     .innerBox{
+        width: 80%;
+        height: 160%;
+     }
+
+     .click{
+        width: 6.5rem;
+        height: 2.5rem;
      }
      
 } 
@@ -945,8 +1012,22 @@ input{
         left:14.5rem;
      }
 
+     .innerBox{
+        width: 80%;
+        height: 160%;
+     }
 
+     .ourMission{
+        font-size: 1rem;
+     }
 
+     .wantToSeeMore{
+        font-size: 1rem;
+     }
+     .click{
+        width: 5.5rem;
+        height: 2.5rem;
+     }
 }
 @media (min-width:931px ) and (max-width:1170px){
     .navbar{
@@ -1019,6 +1100,24 @@ input{
         
      }
 
+     .innerBox{
+        width: 80%;
+        height: 130%;
+     }
+
+     
+     .ourMission{
+        font-size: 0.8rem;
+     }
+
+     .wantToSeeMore{
+        font-size: 0.8rem;
+     }
+     .click{
+        width: 4rem;
+        height: 2rem;
+     }
+
 }
 @media (min-width:741px ) and (max-width:930px){
     .navbar{
@@ -1089,10 +1188,38 @@ input{
         display: none;
      }
 
+     .ourWorkBox{
+        border: #ffffff 15px solid;
+     }
+
 }
 
 
 @media (min-width:585px)and (max-width:740px){
+    .fastForward{
+        width:1.5rem;
+        position: relative;
+        margin-left: 2%;
+        cursor: pointer;
+    
+    }
+    
+    .playButton{
+        width: 2rem;
+        cursor: pointer;
+    }
+    
+    .pauseButton{
+        width: 2rem;
+        cursor: pointer;
+        display: none;
+    }
+    
+    .rewind{
+        width:1.5rem;
+        margin-right: 2%;
+        cursor: pointer;
+    }
     .navbar{
         display: none;
     }
@@ -1178,6 +1305,11 @@ input{
      .outerBox{
         display: none;
      }
+
+     .ourWorkBox{
+        border: #ffffff 13px solid;
+     }
+
 
 }
 @media(max-width:584px){
@@ -1296,4 +1428,34 @@ input{
      .outerBox{
         display: none;
      }
+
+     .ourWorkBox{
+        border: #ffffff 10px solid;
+        border-radius: 25px;
+     }
+
+     .fastForward{
+        width:1.5rem;
+        position: relative;
+        margin-left: 2%;
+        cursor: pointer;
+    
+    }
+    
+    .playButton{
+        width: 2rem;
+        cursor: pointer;
+    }
+    
+    .pauseButton{
+        width: 2rem;
+        cursor: pointer;
+        display: none;
+    }
+    
+    .rewind{
+        width:1.5rem;
+        margin-right: 2%;
+        cursor: pointer;
+    }
 }
