@@ -36,23 +36,9 @@ const playButton = document.querySelector('.playButton');
 const pauseButton = document.querySelector('.pauseButton');
 //storing video element in variable
 const phoneVideo = document.querySelector('.phoneVideo');
+const animationOne = document.querySelector('.animationOne');
 
-//add event listener to play button and play video when clicked
-playButton.addEventListener('click',() =>{
-    phoneVideo.play();
-    playButton.style.display = 'none';
-    pauseButton.style.display = 'flex';
-    
-    
-})
 
-//add event listener to pause button and pause video when clicked
-pauseButton.addEventListener('click',() =>{
-    phoneVideo.pause();
-    playButton.style.display = 'flex';
-    pauseButton.style.display = 'none';
-    
-})
 
 class Video {
     constructor(video, duration){
@@ -77,13 +63,11 @@ class Video {
             return this._endTimer
         }
     
-    
-
-
 }
-const videoOneObject = new Video(phoneVideo, 18.87)
+const videoOneObject = new Video(phoneVideo, 18.87);
+const videoTwoObject = new Video(animationOne, 154);
 //group videos up and sort in array of objects
-const groupOfVideos = [videoOneObject]
+const groupOfVideos = [videoOneObject, videoTwoObject]
 
 //store playback bar and  playback button in variables
 const whiteBarline = document.querySelector('.timeLineBarWhite');
@@ -200,7 +184,7 @@ function updateEndDuration(video){
 }
 
 //invoking the function onto the active video on the screen
-updateEndDuration(groupOfVideos[0])
+
 
 groupOfVideos[0].name.volume = 0.01
 const volume = document.querySelector(".volume");
@@ -286,23 +270,59 @@ function volumEditor(video){
    
 }
 
+//let activeVideo = groupOfVideos[activeNumber]
 
+function activeVideoInloop(arrayOfVideos){
+    let rewindButton = document.querySelector(".rewind");
+    let fastForwardButton = document.querySelector(".fastForward");
+    let activeNumber = 0;
+    rewindButton.addEventListener("click", ()=>{
+        activeNumber -= 1;
+        if (activeNumber < 0){
+            activeNumber = arrayOfVideos.length - 1;
+        } 
+        else if(activeNumber > arrayOfVideos.length){
+            activeNumber = 0;
+        }
+        console.log(activeNumber);
+    })
+    fastForwardButton.addEventListener("click", ()=>{
+        activeNumber += 1;
+        if (activeNumber < 0){
+            activeNumber = arrayOfVideos.length - 1;
+        } 
+        else if(activeNumber >=arrayOfVideos.length){
+            activeNumber = 0;
+        }
+        console.log(activeNumber);
+    })
 
-volumEditor(groupOfVideos[0]);
+    //add event listener to play button and play video when clicked
+    playButton.addEventListener('click',() =>{
+        arrayOfVideos[activeNumber].name.play();
+        playButton.style.display = 'none';
+        pauseButton.style.display = 'flex';
+        
+        
+    })
 
-/*function logger (){
-    circle.style.left = `${80}%`
+//add event listener to pause button and pause video when clicked
+    pauseButton.addEventListener('click',() =>{
+        arrayOfVideos[activeNumber].name.pause();
+        playButton.style.display = 'flex';
+        pauseButton.style.display = 'none';
+        
+    })
+    updateEndDuration(arrayOfVideos[activeNumber]);
+    volumEditor(arrayOfVideos[activeNumber]);
+
 }
 
+activeVideoInloop(groupOfVideos);
 
-function mouseDown(event){
-    window.addEventListener('mousemove', logger)
-}
-
-function mouseup(event){
-    window.removeEventListener('mousemove', logger)
-}
-
-window.addEventListener('mousedown', mouseDown)
-window.addEventListener('mouseup', mouseup)
+/*
+let newVideo = document.createElement("video")
+newVideo.src = "./Resources/animation_one.mp4"
+console.log(newVideo);
+document.querySelector(".videos").appendChild(newVideo);
 */

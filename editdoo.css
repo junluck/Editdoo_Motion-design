@@ -873,12 +873,22 @@ input{
   
 }
 
+.animationOne{
+    position: absolute;
+    width: 60%;
+    right: -50%;
+}
+
 .volumeIcon{
     -webkit-user-drag: none; 
     -khtml-user-drag: none;  
     -moz-user-drag: none;    
     -o-user-drag: none;      
      user-drag: none;  
+}
+
+.videos{
+    position: relative;
 }
 
 @keyframes glow-visibility{
