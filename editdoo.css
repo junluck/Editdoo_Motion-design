@@ -746,7 +746,8 @@ body:not(.ourWorkBox){
 }
 
 .phoneVideo{
-    width: 70%;
+    width: 63%;
+    scale: 1.02;
     
 }
 .controls{
@@ -874,9 +875,12 @@ input{
 }
 
 .animationOne{
-    position: absolute;
-    width: 60%;
-    right: -50%;
+    width: 63%;
+    transition: transform 1000ms ease;
+    transform:scale(0.92);
+
+ 
+   
 }
 
 .volumeIcon{
@@ -887,8 +891,22 @@ input{
      user-drag: none;  
 }
 
-.videos{
-    position: relative;
+
+.videoOne{
+   
+    display: flex;
+    justify-content: center;
+    transition: opacity 1000ms ease;
+}
+
+.videoTwo{
+    right:-70%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transition: right 1000ms ease;
+    z-index: 2;
+    
 }
 
 @keyframes glow-visibility{
