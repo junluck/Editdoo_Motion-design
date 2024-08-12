@@ -305,37 +305,47 @@ function updateEndDuration(video){
 function activeVideoInloop(arrayOfVideos){
     let rewindButton = document.querySelector(".rewind");
     let fastForwardButton = document.querySelector(".fastForward");
-    let previousActiveNumber = 0
+    let previousActiveNumber = 0;
+    let copyOfActiveNumber = 0;
     rewindButton.addEventListener("click", ()=>{
         previousActiveNumber = activeNumber;
+        copyOfActiveNumber = activeNumber
         activeNumber -= 1;
         if (activeNumber < 0){
-            activeNumber = arrayOfVideos.length - 1;
+            activeNumber = 0;
         } 
         else if(activeNumber > arrayOfVideos.length){
-            activeNumber = 0;
+            activeNumber = arrayOfVideos.length - 1;
         }
         console.log(activeNumber);
         arrayOfVideos[previousActiveNumber].name.pause()
         playButton.style.display = 'flex';
         pauseButton.style.display = 'none';
+        if (activeNumber != arrayOfVideos.length){
         arrayOfVideos[activeNumber].name.style.transform= `scale(1.02)`
         arrayOfVideos[activeNumber].videoName.style.right = `0`
-        arrayOfVideos[activeNumber - 1].videoName.style.opacity = `0%`
+        arrayOfVideos[activeNumber - 1].videoName.style.opacity = `0%`}
     })
     fastForwardButton.addEventListener("click", ()=>{
+        copyOfActiveNumber = activeNumber
+        if (copyOfActiveNumber > 0){
+        copyOfActiveNumber = 0;
+       }
+
+
         previousActiveNumber = activeNumber;
         activeNumber += 1;
         if (activeNumber < 0){
-            activeNumber = arrayOfVideos.length - 1;
+            activeNumber = 0;
         } 
         else if(activeNumber >=arrayOfVideos.length){
-            activeNumber = 0;
+            activeNumber = arrayOfVideos.length - 1;
         }
         arrayOfVideos[previousActiveNumber].name.pause()
         console.log(activeNumber);
         playButton.style.display = 'flex';
         pauseButton.style.display = 'none';
+       
     })
 
     //add event listener to play button and play video when clicked
