@@ -807,7 +807,12 @@ body:not(.ourWorkBox){
 .playHead{
     max-width: 850px;
 }
-
+.videoTwo .playHead{
+    width: 50%;
+    transition: width 1000ms ease, transform 1000ms ease;
+    transform: translateY(-30%);
+    z-index: 2;
+}
 input{
     -webkit-appearance: none;
     appearance: none;
@@ -878,6 +883,7 @@ input{
     width: 63%;
     transition: transform 1000ms ease;
     transform:scale(0.92);
+    
 
  
    
@@ -897,6 +903,10 @@ input{
     display: flex;
     justify-content: center;
     transition: opacity 1000ms ease;
+    opacity: 1;
+    
+    
+    
 }
 
 .videoTwo{
@@ -905,13 +915,62 @@ input{
     display: flex;
     justify-content: center;
     transition: right 1000ms ease;
-    z-index: 2;
+    z-index: 0;
+    opacity: 1;
+    width: 100%;
+    
+  
+    
     
 }
 
 @keyframes glow-visibility{
     0%, 100%{ opacity: 0;}
     25%, 75%{opacity: 1;}
+}
+
+@media(min-width:2800px){
+    .packagesSection{
+        display: grid;
+        width: 95%;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 20% 80%;
+    }
+    .packages{
+        grid-column-start: 1;
+        grid-column-end:3 ;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        justify-self: center;
+    }
+    .rightArrowButton{
+        display: none;
+    }
+    .leftArrowButton{
+        display: none;
+    }
+
+    .orderNTwo{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        top: 0rem;
+        justify-self: center;
+        align-self: center;
+        position: relative;
+        
+    }
+    .orderN{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        justify-self: center;
+        transform: translateX(0%);
+    }
+    
+    
 }
 @media(min-width:1671px){
     .humburger-Menu,.hidden-Menu{
@@ -930,6 +989,12 @@ input{
     .innerBox{
         width: 80%;
         height: 180%;
+     }
+
+     .circle{
+        height: 15px;
+        width: 15px;
+        top: 10%;
      }
  
     
@@ -971,6 +1036,12 @@ input{
         width: 6.5rem;
         height: 2.5rem;
      }
+
+     .circle{
+        height: 15px;
+        width: 15px;
+        top: 10%;
+     }
      
 } 
 @media (min-width:1171px) and (max-width:1300px){
@@ -999,6 +1070,10 @@ input{
     }
 
     .packagesH{
+        font-size: 2.2rem;
+    }
+    
+    .ourWorkSec .heading{
         font-size: 2.2rem;
     }
      .orderN{
@@ -1042,7 +1117,7 @@ input{
 
      .innerBox{
         width: 80%;
-        height: 160%;
+        height: 140%;
      }
 
      .ourMission{
@@ -1055,6 +1130,13 @@ input{
      .click{
         width: 5.5rem;
         height: 2.5rem;
+     }
+
+     
+     .circle{
+        height: 15px;
+        width: 15px;
+        top: 10%;
      }
 }
 @media (min-width:931px ) and (max-width:1170px){
@@ -1119,6 +1201,12 @@ input{
     .packagesH{
         font-size: 2rem;
     }
+
+   
+    .ourWorkSec .heading{
+        font-size: 2rem;;
+
+    }
     .orderNow{
         right:19.7rem ;
         padding-right: 0px;
@@ -1130,7 +1218,7 @@ input{
 
      .innerBox{
         width: 80%;
-        height: 130%;
+        height: 124%;
      }
 
      
@@ -1144,6 +1232,15 @@ input{
      .click{
         width: 4rem;
         height: 2rem;
+     }
+     .playHead{
+        max-width: 410px;
+    }
+    
+    .circle{
+        height: 15px;
+        width: 15px;
+        top: 10%;
      }
 
 }
@@ -1185,6 +1282,10 @@ input{
         font-size: 2rem;
         margin-bottom: 3rem;
     }
+    
+    .ourWorkSec .heading{
+        font-size: 2rem;
+    }
     .orderNow{
         right:8.7rem ;
         padding-right: 0px;
@@ -1219,7 +1320,11 @@ input{
      .ourWorkBox{
         border: #ffffff 15px solid;
      }
-
+     .circle{
+        height: 15px;
+        width: 15px;
+        top: 10%;
+     }
 }
 
 
@@ -1336,6 +1441,12 @@ input{
 
      .ourWorkBox{
         border: #ffffff 13px solid;
+     }
+
+     .circle{
+        height: 15px;
+        width: 15px;
+        top: 10%;
      }
 
 
@@ -1483,6 +1594,70 @@ input{
     
     .rewind{
         width:1.5rem;
+        margin-right: 2%;
+        cursor: pointer;
+    }
+
+    .playHead{
+        max-width: 60%;
+    }
+
+    .circle{
+        height: 12px;
+        width: 12px;
+        top: 20%;
+     }
+     .timerStart{
+        font-size: 0.6rem;
+     }
+     .timerEnd{
+        font-size: 0.6rem;
+     }
+
+     .volumeBar{
+        width: 40px;
+       
+     }
+
+     .input{
+        height: 10px;
+        width: 10px;
+     }
+
+     .input::-moz-range-thumb{
+        display: none;
+     }
+
+     input::-webkit-slider-thumb{
+        width: 12px;
+        height: 12px;
+     }
+
+     .volumeBarAndIcon img{
+        width: 13px
+     }
+
+     .fastForward{
+        width:1rem;
+        position: relative;
+        margin-left: 2%;
+        cursor: pointer;
+    
+    }
+    
+    .playButton{
+        width: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .pauseButton{
+        width: 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
+    
+    .rewind{
+        width:1rem;
         margin-right: 2%;
         cursor: pointer;
     }

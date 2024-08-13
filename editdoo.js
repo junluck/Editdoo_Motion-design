@@ -181,9 +181,9 @@ function updateEndDuration(video){
     let currentTime = convertToSecFormat(groupOfVideos[activeNumber].duration *(mouseCordinates/ 100));
     let cordinates = mouseCordinates;
     console.log(screenWidth)
-    if (screenWidth <= 1000){
+    /*if (screenWidth <= 1000){
         cordinates -= 300; 
-    }
+    }*/
 
     if (cordinates <= 0){
         blueBarline.style.width = `0%`;
@@ -310,22 +310,26 @@ function activeVideoInloop(arrayOfVideos){
     rewindButton.addEventListener("click", ()=>{
         previousActiveNumber = activeNumber;
         copyOfActiveNumber = activeNumber
-        activeNumber -= 1;
+        activeNumber += 1;
         if (activeNumber < 0){
             activeNumber = 0;
         } 
-        else if(activeNumber > arrayOfVideos.length){
+        else if(activeNumber >= arrayOfVideos.length){
             activeNumber = arrayOfVideos.length - 1;
         }
         console.log(activeNumber);
         arrayOfVideos[previousActiveNumber].name.pause()
         playButton.style.display = 'flex';
         pauseButton.style.display = 'none';
-        if (activeNumber != arrayOfVideos.length){
+        
         arrayOfVideos[activeNumber].name.style.transform= `scale(1.02)`
         arrayOfVideos[activeNumber].videoName.style.right = `0`
-        arrayOfVideos[activeNumber - 1].videoName.style.opacity = `0%`}
+        arrayOfVideos[activeNumber-1].videoName.style.opacity = `0`
+        arrayOfVideos[activeNumber].videoName.querySelector(".playHead").style.width = `63%`;
+        arrayOfVideos[activeNumber].videoName.querySelector(".playHead").style.transform = `translateY(0%)`;
     })
+
+
     fastForwardButton.addEventListener("click", ()=>{
         copyOfActiveNumber = activeNumber
         if (copyOfActiveNumber > 0){
@@ -334,7 +338,7 @@ function activeVideoInloop(arrayOfVideos){
 
 
         previousActiveNumber = activeNumber;
-        activeNumber += 1;
+        activeNumber -= 1;
         if (activeNumber < 0){
             activeNumber = 0;
         } 
@@ -345,6 +349,12 @@ function activeVideoInloop(arrayOfVideos){
         console.log(activeNumber);
         playButton.style.display = 'flex';
         pauseButton.style.display = 'none';
+        arrayOfVideos[activeNumber + 1].name.style.transform= `scale(0.92)`;
+        arrayOfVideos[activeNumber + 1].videoName.style.right = `-70%`;
+        arrayOfVideos[activeNumber].videoName.style.opacity = `1`;
+        arrayOfVideos[activeNumber + 1].videoName.querySelector(".playHead").style.width = `50%`;
+        arrayOfVideos[activeNumber + 1].videoName.querySelector(".playHead").style.transform = `translateY(0%)`;
+
        
     })
 
