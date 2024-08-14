@@ -320,13 +320,22 @@ function activeVideoInloop(arrayOfVideos){
         console.log(activeNumber);
         arrayOfVideos[previousActiveNumber].name.pause()
         playButton.style.display = 'flex';
-        pauseButton.style.display = 'none';
-        
+        pauseButton.style.display = 'none'; 
         arrayOfVideos[activeNumber].name.style.transform= `scale(1.02)`
         arrayOfVideos[activeNumber].videoName.style.right = `0`
         arrayOfVideos[activeNumber-1].videoName.style.opacity = `0`
         arrayOfVideos[activeNumber].videoName.querySelector(".playHead").style.width = `63%`;
-        arrayOfVideos[activeNumber].videoName.querySelector(".playHead").style.transform = `translateY(0%)`;
+        arrayOfVideos[activeNumber].videoName.querySelector(".playHead").style.opacity = `1`;
+        updateEndDuration(arrayOfVideos[activeNumber]);
+        volumEditor(arrayOfVideos[activeNumber]);
+
+        groupOfVideos[activeNumber].videoName.querySelector(".bigScreen").addEventListener("click",()=>{
+            console.log(videoOneObject.name)
+            console.log(groupOfVideos[0].name)
+            groupOfVideos[activeNumber].name.requestFullscreen().catch((e)=>{
+                console.log(e)
+            })
+        })
     })
 
 
@@ -353,7 +362,14 @@ function activeVideoInloop(arrayOfVideos){
         arrayOfVideos[activeNumber + 1].videoName.style.right = `-70%`;
         arrayOfVideos[activeNumber].videoName.style.opacity = `1`;
         arrayOfVideos[activeNumber + 1].videoName.querySelector(".playHead").style.width = `50%`;
-        arrayOfVideos[activeNumber + 1].videoName.querySelector(".playHead").style.transform = `translateY(0%)`;
+        arrayOfVideos[activeNumber + 1].videoName.querySelector(".playHead").style.opacity = `0`;
+        groupOfVideos[activeNumber].videoName.querySelector(".bigScreen").addEventListener("click",()=>{
+            console.log(videoOneObject.name)
+            console.log(groupOfVideos[0].name)
+            groupOfVideos[activeNumber].name.requestFullscreen().catch((e)=>{
+                console.log(e)
+            })
+        })
 
        
     })
@@ -377,7 +393,13 @@ function activeVideoInloop(arrayOfVideos){
 
         
     })
-
+    groupOfVideos[activeNumber].videoName.querySelector(".bigScreen").addEventListener("click",()=>{
+        console.log(videoOneObject.name)
+        console.log(groupOfVideos[0].name)
+        groupOfVideos[activeNumber].name.requestFullscreen().catch((e)=>{
+            console.log(e)
+        })
+    })
     updateEndDuration(arrayOfVideos[activeNumber]);
     volumEditor(arrayOfVideos[activeNumber]);
 }
@@ -390,3 +412,9 @@ newVideo.src = "./Resources/animation_one.mp4"
 console.log(newVideo);
 document.querySelector(".videos").appendChild(newVideo);
 */
+/*document.addEventListener("dblclick", () =>{
+    videoOneObject.name.requestFullscreen().catch((e)=>{
+        console.log(e)
+    })
+})*/
+
