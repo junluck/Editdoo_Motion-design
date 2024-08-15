@@ -37,8 +37,10 @@ const pauseButton = document.querySelector('.pauseButton');
 //storing video element in variable
 const phoneVideo = document.querySelector('.phoneVideo');
 const animationOne = document.querySelector('.animationOne');
+const animationTwo = document.querySelector(".animationTwo")
 const videoOne = document.querySelector(".videoOne");
 const videoTwo = document.querySelector(".videoTwo");
+const videoThree = document.querySelector(".videoThree");
 let activeNumber = 0;
 
 
@@ -79,8 +81,9 @@ class Video {
 }
 const videoOneObject = new Video(phoneVideo,19,videoOne);
 const videoTwoObject = new Video(animationOne,114,videoTwo);
+const videoThreeObject = new Video(animationTwo,65,videoThree);
 //group videos up and sort in array of objects
-const groupOfVideos = [videoOneObject, videoTwoObject]
+const groupOfVideos = [videoOneObject, videoTwoObject, videoThreeObject]
 
 //store playback bar and  playback button in variables
 const whiteBarline =  groupOfVideos[activeNumber].videoName.querySelector('.timeLineBarWhite');
@@ -326,8 +329,13 @@ function activeVideoInloop(arrayOfVideos){
         arrayOfVideos[activeNumber-1].videoName.style.opacity = `0`
         arrayOfVideos[activeNumber].videoName.querySelector(".playHead").style.width = `63%`;
         arrayOfVideos[activeNumber].videoName.querySelector(".playHead").style.opacity = `1`;
+        arrayOfVideos[activeNumber].videoName.style.zIndex = `${activeNumber}`
+        
         updateEndDuration(arrayOfVideos[activeNumber]);
         volumEditor(arrayOfVideos[activeNumber]);
+        updateEndDuration(arrayOfVideos[arrayOfVideos.length - 1]);
+        volumEditor(arrayOfVideos[arrayOfVideos.length - 1]);
+
 
         groupOfVideos[activeNumber].videoName.querySelector(".bigScreen").addEventListener("click",()=>{
             console.log(videoOneObject.name)
@@ -336,6 +344,8 @@ function activeVideoInloop(arrayOfVideos){
                 console.log(e)
             })
         })
+
+       
     })
 
 
@@ -360,9 +370,13 @@ function activeVideoInloop(arrayOfVideos){
         pauseButton.style.display = 'none';
         arrayOfVideos[activeNumber + 1].name.style.transform= `scale(0.92)`;
         arrayOfVideos[activeNumber + 1].videoName.style.right = `-70%`;
+  
         arrayOfVideos[activeNumber].videoName.style.opacity = `1`;
         arrayOfVideos[activeNumber + 1].videoName.querySelector(".playHead").style.width = `50%`;
-        arrayOfVideos[activeNumber + 1].videoName.querySelector(".playHead").style.opacity = `0`;
+        arrayOfVideos[activeNumber + 1].videoName.querySelector(".playHead").style.opacity = `0%`;
+        console.log(arrayOfVideos.length - activeNumber)
+        arrayOfVideos[activeNumber + 1].videoName.style.zIndex = `${arrayOfVideos.length - activeNumber}`
+        arrayOfVideos[activeNumber + 2].videoName.style.zIndex = `${activeNumber}`
         groupOfVideos[activeNumber].videoName.querySelector(".bigScreen").addEventListener("click",()=>{
             console.log(videoOneObject.name)
             console.log(groupOfVideos[0].name)
@@ -370,7 +384,8 @@ function activeVideoInloop(arrayOfVideos){
                 console.log(e)
             })
         })
-
+        //groupOfVideos[activeNumber].videoName.style.zIndex = `${activeNumber}`;
+      
        
     })
 
