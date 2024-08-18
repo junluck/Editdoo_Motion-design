@@ -172,7 +172,7 @@ function updateEndDuration(video){
       clearInterval(interValTimer)
     })
     let endNumber = convertToSecFormat(videoDuration)
-    //video.endTimer.innerHTML = endNumber;
+   
     let mouseCordinates = 0
     
     video.videoName.querySelector(".playBarLine").addEventListener('click',(event) => {
@@ -183,10 +183,6 @@ function updateEndDuration(video){
     groupOfVideos[activeNumber].name.currentTime = groupOfVideos[activeNumber].duration *(mouseCordinates/ 100);
     let currentTime = convertToSecFormat(groupOfVideos[activeNumber].duration *(mouseCordinates/ 100));
     let cordinates = mouseCordinates;
-    console.log(screenWidth)
-    /*if (screenWidth <= 1000){
-        cordinates -= 300; 
-    }*/
 
     if (cordinates <= 0){
         blueBarline.style.width = `0%`;
@@ -206,7 +202,7 @@ function updateEndDuration(video){
         
     })
 
-    //groupOfVideos[0].name.muted = true;
+  
 
     let isMouseDown = false;
     let isMouseDownTwo = false
@@ -228,8 +224,6 @@ function updateEndDuration(video){
     })
 
     video.circle.addEventListener('mouseup', () =>{
-        //playButton.style.display = 'none';
-        //pauseButton.style.display = 'flex';
         isMouseDownTwo = true;
         
         
@@ -301,9 +295,6 @@ function updateEndDuration(video){
 }
 
 
-
-
-//let activeVideo = groupOfVideos[activeNumber]
 
 function activeVideoInloop(arrayOfVideos){
     let rewindButton = document.querySelector(".rewind");
@@ -384,7 +375,7 @@ function activeVideoInloop(arrayOfVideos){
                 console.log(e)
             })
         })
-        //groupOfVideos[activeNumber].videoName.style.zIndex = `${activeNumber}`;
+      
       
        
     })
@@ -420,16 +411,3 @@ function activeVideoInloop(arrayOfVideos){
 }
 
 activeVideoInloop(groupOfVideos);
-
-/*
-let newVideo = document.createElement("video")
-newVideo.src = "./Resources/animation_one.mp4"
-console.log(newVideo);
-document.querySelector(".videos").appendChild(newVideo);
-*/
-/*document.addEventListener("dblclick", () =>{
-    videoOneObject.name.requestFullscreen().catch((e)=>{
-        console.log(e)
-    })
-})*/
-
