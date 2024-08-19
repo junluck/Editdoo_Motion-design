@@ -548,7 +548,7 @@ body:not(.ourWorkBox){
     align-items: center;
 }
 .ourWorkSec{
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -971,6 +971,7 @@ input{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 5%;
 }
 
 .creatorParent{
@@ -1067,9 +1068,8 @@ input{
 }
 
 .bodyOfFaqSection{
-    display: grid;
-    grid-template-columns: 30% 5% 30% 5% 30%;
-    grid-template-rows: 25% 15% 10% 25% 15% 10% 25% 15% 10%;
+    
+    
     width: 80%;
     height: 100%;
     min-height: 1000px;
@@ -1081,6 +1081,7 @@ input{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 5%;
 }
 
 .bodyOfFaqSection h4{
@@ -1184,9 +1185,10 @@ input{
  
 .paragraphOne, .paragraphTwo, .paragraphThree, .paragraphFour, .paragraphFive, .paragraphSix, .listFaq{
     opacity: 0;
+    transition: opacity 100ms ease;
 }
 .paragraphOne.active, .paragraphTwo.active, .paragraphThree.active, .paragraphFour.active, .paragraphFive.active, .paragraphSix.active, .listFaq.active{
-    opacity: 0;
+    opacity: 1;
 }
 
 
@@ -1197,7 +1199,7 @@ input{
     justify-items: center;
     align-items: center;
     position: relative;
-    
+
 
 }
 
@@ -1213,6 +1215,7 @@ input{
     grid-row-end: 8;
     position: absolute;
     top:0%;
+    transition: height 700ms ease;
 
 
 }
@@ -1239,6 +1242,7 @@ input{
      height: 30%;
      position: absolute;
      top: 0%;
+     transition: height 700ms ease;
 
 }
 
@@ -1254,6 +1258,16 @@ input{
     grid-column-end: 4;
     z-index: 1;
 }
+
+.triangleUpsideDownOne, .triangleUpsideDownTwo, .triangleUpsideDownThree, .triangleUpsideDownFour, .triangleUpsideDownFive, .triangleUpsideDownSix, .triangleUpsideDownSeven{
+    transform:translateY(0px) rotate(0deg);
+    transition: transform 700ms ease;
+ 
+} 
+
+.triangleUpsideDownOne.active, .triangleUpsideDownTwo.active, .triangleUpsideDownThree.active, .triangleUpsideDownFour.active, .triangleUpsideDownFive.active, .triangleUpsideDownSix.active, .triangleUpsideDownSeven.active{
+    transform:translateY(230px) rotate(180deg);
+} 
 
 .listFaq{
     grid-row-start: 4;
@@ -1286,6 +1300,46 @@ input{
 
 }
 
+.footerSection{
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.privacyAndTerms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.privacy{
+    margin-right: 50px;
+}
+
+.contactUs{
+    margin-left: 50px;
+}
+
+.footerSection h2{
+    font-size: 40px;
+    margin-bottom: 10%;
+}
+
+.scoialMediaLogos{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 10%;
+    
+}
+
+.youtube, .instagram{
+    height: 40px;
+    width: 40px;
+    justify-self: center;
+    align-self: center;
+}
 
 @keyframes glow-visibility{
     0%, 100%{ opacity: 0;}
@@ -1342,6 +1396,16 @@ input{
     .creatorParent{
         display: grid;
     }
+
+    .bodyOfFaqSection{
+        display: grid;
+        grid-template-columns: 30% 5% 30% 5% 30%;
+        grid-template-rows: 25% 15% 10% 25% 15% 10% 25% 15% 10%;
+    }
+    .footerSection{
+        margin-top: 500px;
+    }
+    
 }
 
 @media(max-width:1500px){
@@ -1401,6 +1465,68 @@ input{
         margin-left: auto;
         margin-right: auto;
 
+    }
+
+    .bodyOfFaqSection{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px;
+        position: relative;
+    }
+
+    .faqOne{
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .faqTwo{
+        grid-row-start: 4;
+        grid-row-end: 6;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .faqThree{
+        grid-row-start: 7;
+        grid-row-end: 9;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .faqFour{
+        grid-row-start: 10;
+        grid-row-end: 12;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .faqFive{
+        grid-row-start: 13;
+        grid-row-end: 15;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .faqSix{
+        grid-row-start: 16;
+        grid-row-end: 18;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .faqSeven{
+        grid-row-start: 19;
+        grid-row-end: 21;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .faqSection{
+        margin-top:100px ;
+    }
+
+    .footerSection{
+        margin-top: 100px;
     }
 }
 
@@ -1530,6 +1656,19 @@ input{
     .ourWorkSec .heading{
         font-size: 2.2rem;
     }
+
+    .creators h2{
+        font-size: 2.2rem;
+    }
+
+    .faqHeading{
+        font-size: 2.2rem;
+    }
+
+    .footerSection h2{
+        font-size: 2.2rem;
+    }
+
      .orderN{
         width: 67rem;
      }
@@ -1671,9 +1810,22 @@ input{
 
    
     .ourWorkSec .heading{
-        font-size: 2rem;;
+        font-size: 2rem;
 
     }
+
+    .creators h2{
+        font-size: 2rem;
+    }
+
+    .faqHeading{
+        font-size: 2rem;
+    }
+
+    .footerSection h2{
+        font-size: 2rem;
+    }
+
     .orderNow{
         right:19.7rem ;
         padding-right: 0px;
@@ -1767,6 +1919,14 @@ input{
     }
     
     .ourWorkSec .heading{
+        font-size: 2rem;
+    }
+
+    .creators h2{
+        font-size: 2rem;
+    }
+
+    .faqHeading{
         font-size: 2rem;
     }
     .orderNow{
@@ -1922,6 +2082,19 @@ input{
     .ourWorkSec .heading{
         font-size: 2rem;
     }
+
+    .creators h2{
+        font-size: 2rem;
+    }
+
+    .faqHeading{
+        font-size: 2rem;
+    }
+
+    .footerSection h2{
+        font-size: 2rem;
+    }
+
 
     .orderNow{
         right:8.7rem ;
@@ -2082,6 +2255,19 @@ input{
     .ourWorkSec .heading{
         font-size: 1.5rem;
     }
+
+    .creators h2{
+        font-size: 1.5rem;
+    }
+
+    .faqHeading{
+        font-size: 1.5rem;
+    }
+
+    .footerSection h2{
+        font-size: 1.5rem;
+    }
+
 
     .orderNow{
         top: 7rem;
@@ -2274,6 +2460,31 @@ input{
         grid-row-end: 4;
         justify-content: center;
         align-content: center;
+    }
+
+    
+    .faqOne, .faqTwo, .faqThree, .faqFour, .faqFive, .faqSix, .faqSeven{
+        max-height: 400px;
+
+    }
+
+    .listFaq{
+    
+    }
+
+    .faqSection h4{
+        font-size: 1rem;
+    }
+    .bodyOfFaqSection{
+        width: 100%;
+    }
+
+    .paragraphOne, .paragraphTwo, .paragraphThree, .paragraphFour, .paragraphFive, .paragraphSix, .listFaq{
+        margin-top: 10%;
+    }
+
+    .privacyAndTerms{
+        font-size: 0.7rem;
     }
 
 }

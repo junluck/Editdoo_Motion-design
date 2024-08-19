@@ -411,3 +411,39 @@ function activeVideoInloop(arrayOfVideos){
 }
 
 activeVideoInloop(groupOfVideos);
+
+const arrayOfTriangle = [document.querySelector(".triangleUpsideDownOne"), document.querySelector(".triangleUpsideDownTwo"), document.querySelector(".triangleUpsideDownThree"), document.querySelector(".triangleUpsideDownFour"), document.querySelector(".triangleUpsideDownFive"), document.querySelector(".triangleUpsideDownSix"), document.querySelector(".triangleUpsideDownSeven")];
+const arrayOfParagraphs = [document.querySelector(".paragraphOne"), document.querySelector(".paragraphTwo"), document.querySelector(".paragraphThree"), document.querySelector(".paragraphFour"), document.querySelector(".paragraphFive"), document.querySelector(".paragraphSix"), document.querySelector(".listFaq")];
+const arrayOfBackgrounds = [document.querySelector(".backgroundBlurOne"), document.querySelector(".backgroundBlurTwo"), document.querySelector(".backgroundBlurThree"), document.querySelector(".backgroundBlurFour"), document.querySelector(".backgroundBlurFive"), document.querySelector(".backgroundBlurSix"), document.querySelector(".backgroundBlurSeven")];
+const arrayOfBorders = [document.querySelector(".backgroundLineOne"), document.querySelector(".backgroundLineTwo"), document.querySelector(".backgroundLineThree"), document.querySelector(".backgroundLineFour"), document.querySelector(".backgroundLineFive"), document.querySelector(".backgroundLineSix"), document.querySelector(".backgroundLineSeven")];
+let boolOne = true, boolTwo = true, boolThree = true, boolFour = true, boolFive = true, boolSix = true, boolSeven = true
+const arrayOfBool = [boolOne, boolTwo, boolThree, boolFour, boolFive, boolSix, boolSeven ]
+console.log(boolTwo)
+
+function triangleClickEvent(arrayOfTriangle, arrayOfParagraphs, arrayOfBackgrounds, arrayOfBorders){
+    let effect = true;
+arrayOfTriangle.forEach((element,index)=>{
+    element.addEventListener("click",(e)=>{
+        if(arrayOfBool[index]){
+            arrayOfBool[index] = false 
+            arrayOfParagraphs[index].style.transition = "all 1700ms ease";
+            arrayOfParagraphs[index].style.opacity = "1";
+            
+            
+        }
+
+        else{
+            arrayOfBool[index] = true;
+            arrayOfParagraphs[index].style.transition = "all 300ms ease";
+            arrayOfParagraphs[index].style.opacity = "0";
+        }
+        
+        arrayOfBackgrounds[index].classList.toggle("active");
+        arrayOfBorders[index].classList.toggle("active");
+        arrayOfTriangle[index].classList.toggle("active");
+        console.log("ss")
+
+    })
+})}
+
+triangleClickEvent(arrayOfTriangle, arrayOfParagraphs, arrayOfBackgrounds, arrayOfBorders);
