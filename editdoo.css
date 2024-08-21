@@ -4,11 +4,7 @@ html{
 }
 
 body:not(.ourWorkBox){
-    background-color: #060B29;
-    background-image: url("./Resources/Background.svg");
-    background-repeat: no-repeat;
-    background-size: auto-fit;
-    background-position-x: center;
+   
     color: white;
     font-family:'helvetica' ;
     display: flex;
@@ -18,6 +14,8 @@ body:not(.ourWorkBox){
     overflow-x: clip;
     margin: 0;
 }
+
+
 .hum{
     display: flex;
     justify-content:  flex-start;
@@ -285,6 +283,10 @@ body:not(.ourWorkBox){
   
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .orderNow p{
     position: relative;
     display: flex;
@@ -553,6 +555,8 @@ body:not(.ourWorkBox){
     align-items: center;
     flex-direction: column;
     position: relative;
+   
+    
 }
 
 .ourWorkSec .heading{
@@ -972,6 +976,7 @@ input{
     align-items: center;
     flex-direction: column;
     margin-top: 5%;
+   
 }
 
 .creatorParent{
@@ -1082,6 +1087,8 @@ input{
     align-items: center;
     flex-direction: column;
     margin-top: 5%;
+   
+  
 }
 
 .bodyOfFaqSection h4{
@@ -1331,6 +1338,7 @@ input{
     display: grid;
     grid-template-columns: 50% 50%;
     width: 10%;
+    min-width: 100px;
     
 }
 
@@ -1340,10 +1348,25 @@ input{
     justify-self: center;
     align-self: center;
 }
+.privacyAndTerms{
+    font-size: 1.5rem;
+}
+
 
 @keyframes glow-visibility{
     0%, 100%{ opacity: 0;}
     25%, 75%{opacity: 1;}
+}
+
+@media(min-width:4000px){
+    
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: 8000px;
+        background-position:50% 10%;
+    }
 }
 
 @media(min-width:2800px){
@@ -1387,9 +1410,20 @@ input{
         transform: translateX(0%);
     }
 
-   
     
     
+    
+}
+
+@media(min-width:1921px)and (max-width:3999px) {
+    
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: 7000px;
+        background-position:50% 10%;
+    }
 }
 
 @media(min-width:1501px){
@@ -1408,7 +1442,39 @@ input{
     
 }
 
+
+@media(min-width:1501px) and (max-width:1920px){
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: auto-fit;
+        background-position:50% 14%;
+    }
+    .creatorParent{
+        display: grid;
+    }
+
+    .bodyOfFaqSection{
+        display: grid;
+        grid-template-columns: 30% 5% 30% 5% 30%;
+        grid-template-rows: 25% 15% 10% 25% 15% 10% 25% 15% 10%;
+    }
+    .footerSection{
+        margin-top: 500px;
+    }
+    
+}
+
 @media(max-width:1500px){
+
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: 7000px;
+        background-position:50% 19%;
+    }
     .frameBackground{
         grid-column-start:1;
         grid-column-end: 5;
@@ -1547,6 +1613,13 @@ input{
     
 }
 @media(min-width:1441px) and (max-width:1670px){
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: 4000px;
+        background-position:50% 100%;
+    }
     .humburger-Menu,.hidden-Menu{
         display:none;
       
@@ -1573,6 +1646,13 @@ input{
 } 
 
 @media(min-width:1301px) and (max-width:1440px){
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: 4000px;
+        background-position:50% 70%;
+    }
     .humburger-Menu,.hidden-Menu{
         display:none;
       
@@ -1625,7 +1705,13 @@ input{
      
 } 
 @media (min-width:1171px) and (max-width:1300px){
-    
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: 4000px;
+        background-position:50% 50%;
+    }
     .navbar{
         display: none;
     }
@@ -1746,6 +1832,13 @@ input{
     
 }
 @media (min-width:931px ) and (max-width:1170px){
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: 4000px;
+        background-position:50% 70%;
+    }
     .navbar{
         display: none;
     }
@@ -1880,6 +1973,14 @@ input{
 
 }
 @media (min-width:741px ) and (max-width:930px){
+
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: 4000px;
+        background-position:50% 70%;
+    }
     .navbar{
         display: none;
     }
@@ -1986,6 +2087,14 @@ input{
 
 
 @media (min-width:585px)and (max-width:740px){
+
+    body:not(.ourWorkBox){
+        background-color: #060B29;
+        background-image: url("./Resources/path.png");
+        background-repeat: no-repeat;
+        background-size: 4000px;
+        background-position:50% 70%;
+    }
     .fastForward{
         width:1.5rem;
         position: relative;

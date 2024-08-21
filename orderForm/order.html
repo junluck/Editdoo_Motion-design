@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type ="text/css"  href="order.css">
+        <title>Editdoo</title>
+        <script type="module"  async src="order.js"></script>
+    </head>
+    <body>
+        <header>
+            <ul class = "hidden-Menu">
+                <li><a>Packages<a></li>
+                <li><a>Our Work</a></li>
+                <li><a>Creator's Blog</a></li>
+                <li><a>FAQ's</a></li>
+                <li class = "contactTwo"><a >Contact</a></li>
+            </ul>
+            <nav class = "hum">
+                <div  class = "humburger-Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <nav class = "navbar">
+                <img src = "..\Resources\Logo.svg" class = "logo" >
+                <ul class = "list">
+                    <li><a>Packages<a></li>
+                    <li><a>Our Work</a></li>
+                    <li><a>Creator's Blog</a></li>
+                    <li><a>FAQ's</a></li>
+                    <li class = "contact"><a >Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+        <section class = "orderForm">
+            <h2 class = "orderHeading">Order Form</h2>
+            <div class="lineBorderAndForm">
+                <div class="lineBorder"></div>
+                <div class = "form">
+                    <form action="#" method="post" class = "forms">
+                        <section class="selectTypeOfVid">
+                            <label for="select">Select the type of video you want edited</label>
+                            <br>
+                            <select id="select" name="select" required>
+                                <option value="" disabled selected>Select package</option>
+                                <option value="videoEdit">Video editing package</option>
+                                <option value="motionDesign">Motion design package</option>
+                            </select>
+                        </section>
+                        <section class = "firstAndSecondName">
+                            <section class="firstName">
+                                <label for="firstName">First Name</label>
+                                <br>
+                                <input type="text" id="name" name="name" placeholder="First Name" required>
+                            </section>
+                        </section>
+                        <section class="surname">
+                            <label for="LastName">Last Name</label>
+                            <br>
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                        </section>
+                        <section class="linkTofiles">
+                            <label for="LinkToFile">Link to files</label>
+                            <br>
+                            <input type="text" id="LinkToFile" name="LinkToFile"  placeholder="Link to the files" required>
+                        </section>
+                        <section class="email">
+                            <label for="email">Email</label>
+                            <br>
+                            <input type="text" id="email" name="email" placeholder="Email" required>
+                        </section>
+                        <section class="yourMessage">
+                            <label for="message">Your Message</label>
+                            <br>
+                            <textarea id="message" name="message" rows="5" cols="40" placeholder="Enter your message"></textarea>
+                        </section>
+                        <input type ="submit" value="Submit" id="submit">
+                    </form>
+                </div>
+
+            </div>
+        </section>
+            
+        </main>
+        <footer>
+        </footer>
+    </body>
+</html>

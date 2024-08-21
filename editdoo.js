@@ -1,20 +1,13 @@
+import navbar from "/navbar.js";
 
-//variable names with menu container class as the value
-const humburger = document.querySelector('.humburger-Menu');
-const hum = document.querySelector(".hum")
-const hiddenMenu = document.querySelector('.hidden-Menu');
+navbar()
+
 const sliderArrowOne = document.querySelector(".rightArrowButton")
 const sliderArrowTwo = document.querySelector('.leftArrowButton');
 const menuOne = document.querySelector('.orderN');
 const menuTwo = document.querySelector('.orderNTwo');
 let checkClick = false 
 
-//addeventlistener enable active class once element is clicked turning burger menu into an x
-humburger.addEventListener('click', () =>{
-    humburger.classList.toggle('active');
-    hiddenMenu.classList.toggle('active');
-    hum.classList.toggle("active");
-})
 //addeventlistener enable active class once element is clicked moving the motion design package section
 sliderArrowTwo.addEventListener('click',() =>{
     menuOne.classList.toggle('active');
@@ -447,3 +440,4 @@ arrayOfTriangle.forEach((element,index)=>{
 })}
 
 triangleClickEvent(arrayOfTriangle, arrayOfParagraphs, arrayOfBackgrounds, arrayOfBorders);
+

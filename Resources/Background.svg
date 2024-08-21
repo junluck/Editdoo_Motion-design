@@ -1,49 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8192 7027.17">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #0e192b;
-        stroke-width: 0px;
-      }
-
-      .cls-1, .cls-2 {
-        isolation: isolate;
-        opacity: .69;
-      }
-
-      .cls-2 {
-        fill: none;
-        stroke: #fff;
-        stroke-miterlimit: 2.16;
-        stroke-width: 9.17px;
-      }
-
-      .cls-3 {
-        opacity: .71;
-      }
-
-      .cls-4 {
-        opacity: .6;
-      }
-
-      .cls-5 {
-        opacity: .42;
-      }
-
-      .cls-6 {
-        opacity: .45;
-      }
-    </style>
-  </defs>
-  <g id="Layer_2" data-name="Layer 2" class="cls-5">
-    <g class="cls-3">
-      <path id="Path_6-2" data-name="Path 6-2" class="cls-2" d="M-1211.78-1447.37c46.83,111.87-152.55-232.54,2849.43-530.79C4639.63-2276.4,3839.1-747.95,5920.52-2.36c2081.43,745.58,2521.69-1602.97,3802.51-186.38,1280.83,1416.59,4434.74,2431.22,1120.77,3019.56-3313.96,588.34-3673.96,2737.23-7605.09,745.52C-692.42,1584.63-683.89,5552.07-1964.78,4694.68c-1280.89-857.39-2041.33-2684.03-440.26-4510.73C-803.98-1642.75-1258.61-1559.24-1211.78-1447.37Z"/>
-    </g>
-  </g>
-  <g id="Layer_3" data-name="Layer 3" class="cls-4">
-    <g class="cls-6">
-      <path id="Path_6-2-2" data-name="Path 6-2" class="cls-1" d="M-1051.16-1409.3c46.83,111.87-313.17-270.61,2688.81-568.85C4639.63-2276.4,3839.1-747.95,5920.52-2.36c2081.43,745.58,2521.69-1602.97,3802.51-186.38,1280.83,1416.59,4434.74,2431.22,1120.77,3019.56-3313.96,588.34-3673.96,2737.23-7605.09,745.52C-692.42,1584.63-683.89,5552.07-1964.78,4694.68c-1280.89-857.39-2092.94-2725.81-440.26-4510.73,1193.26-1288.74,1307.05-1705.12,1353.88-1593.26Z"/>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 8192 7027.2" style="enable-background:new 0 0 8192 7027.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;opacity:0.42;}
+	.st1{display:inline;opacity:0.71;}
+	.st2{opacity:0.69;fill:none;stroke:#FFFFFF;stroke-width:9.17;stroke-miterlimit:2.16;enable-background:new    ;}
+	.st3{display:none;opacity:0.6;}
+	.st4{display:inline;opacity:0.45;}
+	.st5{opacity:0.69;fill:#0E192B;enable-background:new    ;}
+	.st6{opacity:0.24;fill:#0E192B;stroke:#FFFFFF;stroke-width:13;stroke-miterlimit:2.16;enable-background:new    ;}
+</style>
+<g id="Layer_1">
+	<g id="Layer_2_00000134950768206814629680000000854721484888030341_" class="st0">
+		<g class="st1">
+			<path id="Path_6-2" class="st2" d="M-1808.5-6186.3c424-490.9,2229.5-771.3,5231.5-1069.5S5624.5-6025.6,7705.9-5280
+				s2521.7-1603,3802.5-186.4s4434.7,2431.2,1120.8,3019.6c-3314,588.3-3674,2737.2-7605.1,745.5S1101.4,274.4-179.5-583
+				s-3419.9-1991.3-1818.8-3818C-1998.3-5907.4-1887.8-6094.6-1808.5-6186.3z"/>
+		</g>
+	</g>
+	<g id="Layer_3" class="st3">
+		<g class="st4">
+			<path id="Path_6-2-2_00000080190811903844574510000016379396028306241457_" class="st5" d="M-5178.3,7192v-334.7
+				c3.1-3.9-3135.4-14.4,2108.9-412.8c3002-298.2,4613.3,91.3,6694.8,836.8c3380.9,870.3,3422.1-1243.4,4702.9,173.1
+				C9609.1,8871,12763,9885.7,9449.1,10474c-3314,588.3-3674,2737.2-7605.1,745.5s-3922.6,1975.7-5203.5,1118.3
+				S-6831,9691.1-5178.3,7906.2V7192z"/>
+		</g>
+	</g>
+	<path class="st6" d="M15852.7,1031.2c0,0-229.3-6424.6-4980.7-2524.2c-4540.3,3727-9504-440.5-10977.9,16.9S-404,3687.6-404,3687.6
+		s2030.2,840.3,4838.3,121.9c2185.4-559.1,4155.8,639.9,5726.1,169.4c3607.9-1081,5718.1,2085.2,5718.1,2085.2L15852.7,1031.2z"/>
+</g>
 </svg>
