@@ -158,6 +158,7 @@ body:not(.ourWorkBox){
     margin-left: 4rem;
     height:70px;
     width:160px;
+    cursor: pointer;
 }
 
 .contact{
@@ -1446,7 +1447,7 @@ input{
 @media(min-width:1501px) and (max-width:1920px){
     body:not(.ourWorkBox){
         background-color: #060B29;
-        background-image: url("./Resources/path.png");
+        background-image: url("./Resources/path.webp");
         background-repeat: no-repeat;
         background-size: auto-fit;
         background-position:50% 14%;

@@ -5,10 +5,10 @@ html{
 
 body:not(.ourWorkBox){
     background-color: #060B29;
-    background-image: url("./Resources/Background.svg");
+    background-image: url("../Resources/path.png");
     background-repeat: no-repeat;
     background-size: auto-fit;
-    background-position-x: center;
+    background-position: 60% 5%;
     color: white;
     font-family:'helvetica' ;
     display: flex;
@@ -387,6 +387,11 @@ input[type="text"]{
 textarea{
     color: #4d4d4d;
     font-family: 'helvetica';
+}
+
+.thankYou{
+    font-size: 1.5rem;
+    display: none;
 }
 @media(min-width:1501px){
  

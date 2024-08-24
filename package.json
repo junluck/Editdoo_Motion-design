@@ -1,0 +1,27 @@
+{
+  "name": "editdoo_motion-design",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000e\u0000d\u0000i\u0000t\u0000d\u0000o\u0000o\u0000-\u0000w\u0000e\u0000b\u0000s\u0000i\u0000t\u0000e\u0000\r\u0000 \u0000",
+  "main": "editdoo.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "devstart":"nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

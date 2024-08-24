@@ -1,5 +1,6 @@
 import navbar from "/navbar.js";
 
+
 navbar()
 
 const sliderArrowOne = document.querySelector(".rightArrowButton")
