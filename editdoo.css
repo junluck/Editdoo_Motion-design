@@ -3,6 +3,7 @@ html{
     overflow-x: clip;
 }
 
+
 body:not(.ourWorkBox){
    
     color: white;
@@ -14,7 +15,6 @@ body:not(.ourWorkBox){
     overflow-x: clip;
     margin: 0;
 }
-
 
 .hum{
     display: flex;
@@ -95,6 +95,7 @@ body:not(.ourWorkBox){
     font-size: 3rem;
     z-index: 2;
     background-color: #060B29;
+    
    
     
 }
@@ -213,8 +214,7 @@ body:not(.ourWorkBox){
 
 .editing{
    grid-column-start: 1;
-   grid-column-end: 2;
-  
+   grid-column-end: 2; 
    width: 100%;
    
 }
@@ -224,8 +224,6 @@ body:not(.ourWorkBox){
     
    
 }
-
-
 
 
 
@@ -711,7 +709,7 @@ a{
     background-color: #7f73e2;
     position: absolute;
     border-radius: 20px;
-    left: -1%;
+    left: -2%;
     z-index: 2;
     cursor: pointer;
     transform: translateX(0px);
@@ -1447,7 +1445,7 @@ input{
 @media(min-width:1501px) and (max-width:1920px){
     body:not(.ourWorkBox){
         background-color: #060B29;
-        background-image: url("./Resources/path.webp");
+        background-image: url("./Resources/path.png");
         background-repeat: no-repeat;
         background-size: auto-fit;
         background-position:50% 14%;
@@ -2035,11 +2033,7 @@ input{
         right:8.7rem ;
         padding-right: 0px;
      }
-     .orderNow img{
-        width:25rem ;
-        
-        
-     }
+    
      .orderNTwo{
         width: 35rem;
      }
@@ -2534,9 +2528,7 @@ input{
         transform: translateX(-180%);
     }
 
-    .frameBackground{
-       
-    }
+   
     .creatorParent{
         display: grid;
         grid-template-columns:20px 300px 20px;
@@ -2578,9 +2570,7 @@ input{
 
     }
 
-    .listFaq{
-    
-    }
+  
 
     .faqSection h4{
         font-size: 1rem;

@@ -9,6 +9,7 @@
         <title>Editdoo</title>
         <script type="module" async src="editdoo.js"></script>
         <script type="module" src="navbar.js" ></script>
+        
     </head>
     <body>
         <header>
@@ -27,7 +28,7 @@
                 </div>
             </nav>
             <nav class = "navbar">
-                <a href="/index.html"><img src = ".\Resources\Logo.svg" class = "logo" ></a>
+                <a href="/index.html"><img src = ".\Resources\Logo.svg" class = "logo" loading="lazy" ></a>
                 <ul class = "list">
                     <li><a>Packages<a></li>
                     <li><a>Our Work</a></li>
@@ -37,7 +38,7 @@
                 </ul>
             </nav>
         </header>
-        <main>
+        <main class = "main">
             <section class = "topPart">
                 <div class = "editing">
                     <h1 class = "mainHeading">Editing Your<br>Dreams</h1>
@@ -45,7 +46,7 @@
                     <a href="./orderForm/order.html"><p class = "order">ORDER NOW</p></a>
                 </div>
                 <div>
-                    <img src=".\Resources\man.svg" fetchpriority="high">
+                    <img src=".\Resources\man.png"  loading="lazy" width="600" height="400"  class="man">
                 </div>
             </section>
             <section class = "packagesSection">
@@ -97,9 +98,10 @@
                         </div>
                         
                 </div>
+
                 <section class = "orderNTwo" id = "orderNTwo" >
                     <div class = "orderNow">
-                        <img src =".\Resources\motion_vector.svg">
+                        <img src =".\Resources\motion_vector.webp">
                         <a href="./orderForm/order.html"><p class = "orderNowButton">ORDER NOW</p></a>
                     </div>
                     <div class = "singleVideoEdit">
@@ -173,7 +175,7 @@
                                     <h4 class = "timerEnd" id = "timerEnd">0:19</h4>
                                 </div>
                                 <div class="videos">
-                                    <video class = "phoneVideo" src="./Resources/3d phone ad.mp4" duration = "19"></video>
+                                    <video class = "phoneVideo" src="./Resources/3d.mp4" duration = "19"></video>
                                 </div>
                             </div>
                         <div class = "videoTwo">
