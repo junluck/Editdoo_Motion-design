@@ -28,6 +28,7 @@ sliderArrowOne.addEventListener('click',() =>{
 //storing play and pause element button in variables
 const playButton = document.querySelector('.playButton');
 const pauseButton = document.querySelector('.pauseButton');
+const rewind = document.querySelector(".rewind");
 //storing video element in variable
 const phoneVideo = document.querySelector('.phoneVideo');
 const animationOne = document.querySelector('.animationOne');

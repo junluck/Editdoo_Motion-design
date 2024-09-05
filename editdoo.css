@@ -1,6 +1,7 @@
 html{
     font-size: 100%;
     overflow-x: clip;
+    scroll-behavior: smooth;
 }
 
 
@@ -298,6 +299,10 @@ a{
     height: 3.5rem;
 
 
+}
+
+.orderNowButton{
+    cursor: pointer;
 }
 
 
@@ -771,6 +776,13 @@ a{
     position: relative;
     margin-left: 2%;
     cursor: pointer;
+    transform: scale(1);
+    transition: transform 150ms ease;
+
+}
+
+.fastForward:active{
+    transform: scale(0.9);
 
 }
 
@@ -789,6 +801,14 @@ a{
     width:2.5rem;
     margin-right: 2%;
     cursor: pointer;
+    transform: scale(1);
+    transition: transform 150ms ease;
+   
+}
+
+.rewind:active{
+    transform: scale(0.9);
+
 }
 
 .volumeBarAndIcon{
