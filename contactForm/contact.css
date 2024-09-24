@@ -226,8 +226,10 @@ h2{
     display: grid;
     height: 80%;
     width: 80%;
-    grid-template-rows: 15% 15% 15% 15% 30% 15%;
+    grid-template-rows: 15% 15% 15% 30% 15%;
     grid-template-columns: 50% 50%;
+    margin-top: 150px;
+    margin-bottom: auto;
     
 }
 
@@ -246,30 +248,30 @@ h2{
 }
 
 .surname{
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
 }
 
-.linkTofiles{
-    grid-row-start: 3;
-    grid-row-end: 4;
+.email{
+    grid-row-start: 2;
+    grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
-.email{
-    grid-row-start: 4;
-    grid-row-end: 5;
+.subject{
+    grid-row-start: 3;
+    grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 3;
 
 }
 
 .yourMessage{
-    grid-row-start: 5;
-    grid-row-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 5;
     grid-column-start: 1;
     grid-column-end: 3;
 }
@@ -312,19 +314,6 @@ h2{
     opacity: 0.6;
 }
 
-#LinkToFile{
-    width: 99%;
-    height: 50%;
-    border-radius:8px ;
-    border: none;
-}
-
-#LinkToFile::placeholder{
-    font-size: 1rem;
-    color: #4d4d4d;
-    opacity: 0.6;
-}
-
 
 #email{
     width: 99%;
@@ -332,6 +321,14 @@ h2{
     border-radius:8px ;
     border: none;
 }
+
+#subject{
+    width: 99%;
+    height: 50%;
+    border-radius:8px ;
+    border: none;
+}
+
 input:focus{
     outline: none;
     border: none;
@@ -367,8 +364,8 @@ input:focus{
 }
 
 #submit{
-    grid-row-start: 6;
-    grid-row-end: 7;
+    grid-row-start: 5;
+    grid-row-end: 6;
     grid-column-start: 1;
     grid-column-end: 3;
     width: 30%;
