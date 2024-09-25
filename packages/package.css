@@ -229,6 +229,10 @@ body:not(.ourWorkBox){
     position: relative;
 }
 
+a{
+    text-decoration: none;
+    color: inherit
+}
 .packageTwo{
     grid-row-start: 1;
     grid-row-end: 2;
