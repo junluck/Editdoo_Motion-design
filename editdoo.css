@@ -1370,8 +1370,12 @@ input{
 .privacyAndTerms{
     font-size: 1.5rem;
 }
-
-
+.youtube{
+    cursor: pointer;
+}
+.instagram{
+    cursor: pointer;
+}
 @keyframes glow-visibility{
     0%, 100%{ opacity: 0;}
     25%, 75%{opacity: 1;}

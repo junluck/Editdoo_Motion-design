@@ -204,17 +204,19 @@ body:not(.ourWorkBox){
     grid-template-rows: 10% 90%;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
     
 }
 
 .packageSectionMain h2{
     justify-self: center;
+    
 }
 .packageOneAndTwo{
     width: 90%;
     min-width: 320px;
     justify-self: center;
-    margin-top: 130px;
+    margin-top: 90px;
     padding-bottom:70px ;
 }
 
