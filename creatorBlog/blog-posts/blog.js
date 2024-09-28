@@ -22,14 +22,16 @@ function appender(ele){
     commentsDiv.appendChild(newDiv)
 }
 
-function printOutCommennts(){
-    arrayOfCom.map((element)=>{
+function printOutCommennts(arrayOfCommentsOne){
+    arrayOfCommentsOne.map((element)=>{
         appender(element)
     })
 
 }
 
-printOutCommennts();
+if(JSON.parse(localStorage.getItem('arrayInMem')).length > 0){
+    printOutCommennts(arrayOfCom);
+}
 
 function renderCommentInArray(array){
     let endOfArray = array.length - 1 
