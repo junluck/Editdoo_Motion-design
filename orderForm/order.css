@@ -402,6 +402,8 @@ textarea{
 .thankYou{
     font-size: 1.5rem;
     display: none;
+    text-align: center;
+    line-height: 40px;
 }
 
 a{

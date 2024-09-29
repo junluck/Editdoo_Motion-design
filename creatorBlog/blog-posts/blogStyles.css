@@ -292,9 +292,16 @@ input:focus{
     .logo{
         display: none;
     }
- 
+    #name{
+        width: 700px;
+        
+    }
+    
+    
+    #message{
+        width: 700px;
 }
-
+}
 @media (min-width:741px ) and (max-width:950px){
     .navbar{
         display: none;
@@ -303,6 +310,22 @@ input:focus{
     
     .logo{
         display: none;
+    }
+
+    #name{
+        width: 700px;
+        
+    }
+    
+    
+    #message{
+        width: 700px;
+    }
+
+
+    .top10Microphones{
+        width: 90%;
+        
     }
 
 }
@@ -316,6 +339,56 @@ input:focus{
 
     .logo{
         display: none;
+    }
+
+    #name{
+        width: 500px;
+        
+    }
+    
+    
+    #message{
+        width: 500px;
+    }
+
+    img{
+        height: 300px;
+    }
+
+    .top10Microphones{
+        width: 90%;
+        
+    }
+
+    
+}
+ 
+
+@media (max-width:584px){
+    .navbar{
+        display: none;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    #name{
+        width: 300px;
+        
+    }
+    
+    
+    #message{
+        width:300px;
+    }
+    img{
+        height: 200px;
+    }
+
+    .top10Microphones{
+        width: 90%;
+        
     }
 
 }

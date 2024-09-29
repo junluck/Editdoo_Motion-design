@@ -7,8 +7,6 @@ const nameId = document.getElementById("name");
 const messageId = document.getElementById("message");
 const commentsDiv = document.getElementById("comments");
 const arrayOfComments = [];
-let arrayOfCom= JSON.parse(localStorage.getItem('arrayInMem'));
-console.log(arrayOfCom)
 
 function appender(ele){
     const newDiv = document.createElement("div");
@@ -22,16 +20,7 @@ function appender(ele){
     commentsDiv.appendChild(newDiv)
 }
 
-function printOutCommennts(arrayOfCommentsOne){
-    arrayOfCommentsOne.map((element)=>{
-        appender(element)
-    })
 
-}
-
-if(JSON.parse(localStorage.getItem('arrayInMem')).length > 0){
-    printOutCommennts(arrayOfCom);
-}
 
 function renderCommentInArray(array){
     let endOfArray = array.length - 1 
@@ -39,11 +28,8 @@ function renderCommentInArray(array){
 }
 
 form.addEventListener("submit",(event)=>{
-    let arrayInMemory = JSON.parse(localStorage.getItem('arrayInMem')) || [];
-    let newComment = {username:nameId.value,message:messageId.value};
-    arrayInMemory.push(newComment);
-    localStorage.setItem("arrayInMem",JSON.stringify(arrayInMemory))
     event.preventDefault();
+    let newComment = {username:nameId.value,message:messageId.value};
     appender(newComment);
     nameId.value = "";
     messageId.value = "";
