@@ -1,16 +1,18 @@
 import navbar from "/navbar.js";
-
+//Navbar functionality
 navbar()
 
-
+//storing form in variable aswell as thank you message
 const form = document.querySelector(".forms")
 const thankYou = document.querySelector(".thankYou")
 
+// on subimt of form email.js will send email 
 form.addEventListener("submit",(event)=>{
     const formData = new FormData(form)
     const data = Object.fromEntries(formData)
     console.log(data)
     event.preventDefault()
+    // function that sends email 
     function sendMail(){
         let params = data
 

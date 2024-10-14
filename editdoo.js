@@ -1,6 +1,6 @@
 import navbar from "/navbar.js";
 
-
+//Navbar functionality
 navbar()
 
 const sliderArrowOne = document.querySelector(".rightArrowButton")
@@ -25,10 +25,11 @@ sliderArrowOne.addEventListener('click',() =>{
 
 })
 
-//storing play and pause element button in variables
+//storing play,pause and Rewind element button in variables
 const playButton = document.querySelector('.playButton');
 const pauseButton = document.querySelector('.pauseButton');
 const rewind = document.querySelector(".rewind");
+
 //storing video element in variable
 const phoneVideo = document.querySelector('.phoneVideo');
 const animationOne = document.querySelector('.animationOne');
@@ -38,7 +39,7 @@ const videoTwo = document.querySelector(".videoTwo");
 const videoThree = document.querySelector(".videoThree");
 let activeNumber = 0;
 
-
+//make class for video so that I can store video
 class Video {
     constructor(video, duration, videoName){
         this._name = video;
@@ -74,9 +75,12 @@ class Video {
     
     
 }
+
+//storing each video in video with classes
 const videoOneObject = new Video(phoneVideo,19,videoOne);
 const videoTwoObject = new Video(animationOne,114,videoTwo);
 const videoThreeObject = new Video(animationTwo,65,videoThree);
+
 //group videos up and sort in array of objects
 const groupOfVideos = [videoOneObject, videoTwoObject, videoThreeObject]
 
@@ -99,16 +103,14 @@ window.addEventListener('resize', () => {
 //intialializing mouseCordinates variable and assigning it to 0
 let mouseCordinates = 0
 
-//declaring a function that will upadte time of video and alow user to move play head to any point on timeline
-
+//function that will upadte time of video and allow user to move play head to any point on timeline
 function updateEndDuration(video){
     let videoDuration = video.duration;
 
+    //function that converts second format to minute video format
     function convertToSecFormat(videoTimerNumber){
         let inMin = (videoTimerNumber / 100).toFixed(2);
-        console.log(inMin);
         let arrayOfSec = [...inMin];
-        console.log(arrayOfSec);
         let convertedSeconds = "";
         for(let i = 0; i < arrayOfSec.length; i++)
         {
@@ -128,14 +130,19 @@ function updateEndDuration(video){
     }
 
     let  interValTimer = undefined;
+    
+    //Eventlistener that listens if video is playing so that it can move playhead with video 
     video.name.addEventListener("playing", (event) => {
         const whiteBarline =  groupOfVideos[activeNumber].videoName.querySelector('.timeLineBarWhite');
         const blueBarline =  groupOfVideos[activeNumber].videoName.querySelector('.timeLineBarBlue');
         const circle = groupOfVideos[activeNumber].circle
         playButton.style.display = 'none';
         pauseButton.style.display = 'flex';
+
+        //set interval for every second to update the timer
         interValTimer = setInterval(() => {
 
+        //if time reach end of video the pause button  becomes playbutton
         if(video.name.currentTime === video.name.duration){
             playButton.style.display = 'flex';
             pauseButton.style.display = 'none';
@@ -143,33 +150,37 @@ function updateEndDuration(video){
         
         let num =  video.name.currentTime;
         let convertedNum = video.name.currentTime
+
+        // convert seconds to minute format if it hits 60 
         if (video.name.currentTime >= 60){
             convertedNum  = 100 + (video.name.currentTime - 60)
         }
         
+        //convert current time into secondformat
         let currentTime = convertToSecFormat(convertedNum);
         video.startTimer.innerHTML = `${currentTime}`;
         let percentage = (video.name.currentTime / video.duration) * 100;
         circle.style.left = `${percentage - 2}%`;
         blueBarline.style.width= `${percentage}%`;
-        console.log(video.duration)
-        console.log(video.name.currentTime)
-        console.log(video.name.currentTime)
-        
+
 
             
             
         },1)
     })
    
+    //when video gets paused the setinterval function gets cleared
     video.name.addEventListener("pause", (event) => {
 
       clearInterval(interValTimer)
     })
+
+    //get the end duration number and convert it
     let endNumber = convertToSecFormat(videoDuration)
    
     let mouseCordinates = 0
     
+    //clicking on playbarline and play heading moving to mouse cordinates
     video.videoName.querySelector(".playBarLine").addEventListener('click',(event) => {
     const whiteBarline =  groupOfVideos[activeNumber].videoName.querySelector('.timeLineBarWhite');
     const blueBarline =  groupOfVideos[activeNumber].videoName.querySelector('.timeLineBarBlue');
@@ -179,12 +190,13 @@ function updateEndDuration(video){
     let currentTime = convertToSecFormat(groupOfVideos[activeNumber].duration *(mouseCordinates/ 100));
     let cordinates = mouseCordinates;
 
+    //cordinates  won't go under 0 and position will stay at 0%
     if (cordinates <= 0){
         blueBarline.style.width = `0%`;
         circle.style.left = `0%`
         video.startTimer.innerHTML = `${convertToSecFormat(0)}`;
     }
-
+    //if cordinates is more than 0 and less than 101 it the position of the elements will be at the cordinates
     else if (cordinates > 0 && cordinates <= 100){
         blueBarline.style.width= `${cordinates}%`;
         circle.style.left = `${cordinates - 2}%`
@@ -202,29 +214,26 @@ function updateEndDuration(video){
     let isMouseDown = false;
     let isMouseDownTwo = false
 
-
+    //mouse down event on circle playhead and video will pause
     video.circle.addEventListener('mousedown', () =>{
         isMouseDown = true;
-        phoneVideo.pause();
         playButton.style.display = 'flex';
         pauseButton.style.display = 'none';
     })
-
+    //mouse release in document will set isMouseDown to false 
     document.addEventListener('mouseup', () =>{
         isMouseDown = false;
-        if (isMouseDownTwo){
         
-        }
-
     })
 
+    //mouse release in document will set isMouseDownTwo to true 
     video.circle.addEventListener('mouseup', () =>{
         isMouseDownTwo = true;
         
         
     })
 
-
+    //eventlistener for mousemove on playbarline and moves play bar line to mousecordinates
     video.videoName.querySelector(".playBarLine").addEventListener('mousemove', (event) =>{
         const whiteBarline =  groupOfVideos[activeNumber].videoName.querySelector('.timeLineBarWhite');
         const blueBarline =  groupOfVideos[activeNumber].videoName.querySelector('.timeLineBarBlue');
@@ -237,7 +246,7 @@ function updateEndDuration(video){
             percentage = 100;
         }
         if (isMouseDown){
-            console.log(percentage);
+            
             circle.style.left = `${percentage - 2}%`;
             blueBarline.style.width =`${percentage}%`;
             groupOfVideos[activeNumber].name.currentTime = groupOfVideos[activeNumber].duration * percentage / 100;
@@ -247,8 +256,6 @@ function updateEndDuration(video){
     })
 
     }
-
-    //invoking the function onto the active video on the screen
 
 
     groupOfVideos[activeNumber].name.volume = 0.01
@@ -260,7 +267,7 @@ function updateEndDuration(video){
 
 
 
-
+    //function that edits the videos volume when clicked
     function volumEditor(video){
         
         let rangeValue = video.videoName.querySelector(".volume");
@@ -272,6 +279,7 @@ function updateEndDuration(video){
             video.name.volume = progress.value / 100;
         }
 
+        //when volume bar is clicked it moves based on the mouse
         progress.addEventListener("click", (event)=>{
             let sizeOfBar = rangeValue.getBoundingClientRect().right -  rangeValue.getBoundingClientRect().left ;
             let mousePosition = event.clientX - rangeValue.getBoundingClientRect().left;
@@ -279,8 +287,7 @@ function updateEndDuration(video){
             rangeValue.value = mousePercent;
             progress.value = mousePercent;
             video.name.volume = progress.value / 100;
-            console.log(rangeValue.getBoundingClientRect().right)
-            console.log(mousePercent );
+           
         })
 
         rangeValue.addEventListener("input", () =>{
@@ -290,12 +297,14 @@ function updateEndDuration(video){
 }
 
 
-
+//function that  allows to scroll thru videos and make video full screen
 function activeVideoInloop(arrayOfVideos){
     let rewindButton = document.querySelector(".rewind");
     let fastForwardButton = document.querySelector(".fastForward");
     let previousActiveNumber = 0;
     let copyOfActiveNumber = 0;
+
+    //check if rewind button is being pressed so can move forward to other videos
     rewindButton.addEventListener("click", ()=>{
         previousActiveNumber = activeNumber;
         copyOfActiveNumber = activeNumber
@@ -306,7 +315,7 @@ function activeVideoInloop(arrayOfVideos){
         else if(activeNumber >= arrayOfVideos.length){
             activeNumber = arrayOfVideos.length - 1;
         }
-        console.log(activeNumber);
+        
         arrayOfVideos[previousActiveNumber].name.pause()
         playButton.style.display = 'flex';
         pauseButton.style.display = 'none'; 
@@ -322,10 +331,8 @@ function activeVideoInloop(arrayOfVideos){
         updateEndDuration(arrayOfVideos[arrayOfVideos.length - 1]);
         volumEditor(arrayOfVideos[arrayOfVideos.length - 1]);
 
-
+       //check if big button is being pressed so can make video screen
         groupOfVideos[activeNumber].videoName.querySelector(".bigScreen").addEventListener("click",()=>{
-            console.log(videoOneObject.name)
-            console.log(groupOfVideos[0].name)
             groupOfVideos[activeNumber].name.requestFullscreen().catch((e)=>{
                 console.log(e)
             })
@@ -334,7 +341,7 @@ function activeVideoInloop(arrayOfVideos){
        
     })
 
-
+    //check if fastforward button is being pressed so can move back to other videos
     fastForwardButton.addEventListener("click", ()=>{
         copyOfActiveNumber = activeNumber
         if (copyOfActiveNumber > 0){
@@ -384,7 +391,7 @@ function activeVideoInloop(arrayOfVideos){
         volumEditor(arrayOfVideos[activeNumber]);
     })
 
-//add event listener to pause button and pause video when clicked
+    //add event listener to pause button and pause video when clicked
     pauseButton.addEventListener('click',() =>{
         arrayOfVideos[activeNumber].name.pause();
         playButton.style.display = 'flex';
@@ -394,9 +401,9 @@ function activeVideoInloop(arrayOfVideos){
 
         
     })
+
+    //click each video to make it fullscreen
     groupOfVideos[activeNumber].videoName.querySelector(".bigScreen").addEventListener("click",()=>{
-        console.log(videoOneObject.name)
-        console.log(groupOfVideos[0].name)
         groupOfVideos[activeNumber].name.requestFullscreen().catch((e)=>{
             console.log(e)
         })
@@ -405,16 +412,18 @@ function activeVideoInloop(arrayOfVideos){
     volumEditor(arrayOfVideos[activeNumber]);
 }
 
+//invoking function
 activeVideoInloop(groupOfVideos);
 
+//storing triangles,paragraphs,border,backgrounds and booleons
 const arrayOfTriangle = [document.querySelector(".triangleUpsideDownOne"), document.querySelector(".triangleUpsideDownTwo"), document.querySelector(".triangleUpsideDownThree"), document.querySelector(".triangleUpsideDownFour"), document.querySelector(".triangleUpsideDownFive"), document.querySelector(".triangleUpsideDownSix"), document.querySelector(".triangleUpsideDownSeven")];
 const arrayOfParagraphs = [document.querySelector(".paragraphOne"), document.querySelector(".paragraphTwo"), document.querySelector(".paragraphThree"), document.querySelector(".paragraphFour"), document.querySelector(".paragraphFive"), document.querySelector(".paragraphSix"), document.querySelector(".listFaq")];
 const arrayOfBackgrounds = [document.querySelector(".backgroundBlurOne"), document.querySelector(".backgroundBlurTwo"), document.querySelector(".backgroundBlurThree"), document.querySelector(".backgroundBlurFour"), document.querySelector(".backgroundBlurFive"), document.querySelector(".backgroundBlurSix"), document.querySelector(".backgroundBlurSeven")];
 const arrayOfBorders = [document.querySelector(".backgroundLineOne"), document.querySelector(".backgroundLineTwo"), document.querySelector(".backgroundLineThree"), document.querySelector(".backgroundLineFour"), document.querySelector(".backgroundLineFive"), document.querySelector(".backgroundLineSix"), document.querySelector(".backgroundLineSeven")];
 let boolOne = true, boolTwo = true, boolThree = true, boolFour = true, boolFive = true, boolSix = true, boolSeven = true
 const arrayOfBool = [boolOne, boolTwo, boolThree, boolFour, boolFive, boolSix, boolSeven ]
-console.log(boolTwo)
 
+//if you click on triangles the faq sqaure expands
 function triangleClickEvent(arrayOfTriangle, arrayOfParagraphs, arrayOfBackgrounds, arrayOfBorders){
     let effect = true;
 arrayOfTriangle.forEach((element,index)=>{
@@ -436,10 +445,11 @@ arrayOfTriangle.forEach((element,index)=>{
         arrayOfBackgrounds[index].classList.toggle("active");
         arrayOfBorders[index].classList.toggle("active");
         arrayOfTriangle[index].classList.toggle("active");
-        console.log("ss")
+ 
 
     })
 })}
 
+//invoke function on triangles and pparagraphs and backgrounds
 triangleClickEvent(arrayOfTriangle, arrayOfParagraphs, arrayOfBackgrounds, arrayOfBorders);
 
