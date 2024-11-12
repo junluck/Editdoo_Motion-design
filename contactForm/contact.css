@@ -369,7 +369,7 @@ input:focus{
     grid-column-start: 1;
     grid-column-end: 3;
     width: 30%;
-    height: 80%;
+    height: 70%;
     justify-self: center;
     border-radius:50px ;
     background-color: #0C7EEF;

@@ -2413,8 +2413,8 @@ input{
 
      .orderNow p{
         width: 6rem;
-        height: 3rem;
-        font-size: 0.7rem;
+        height: 2rem;
+        font-size: 0.6rem;
     }
 
      .contact{
@@ -2610,5 +2610,21 @@ input{
     .privacyAndTerms{
         font-size: 0.7rem;
     }
+    .rightArrowButton img{
+        height: 40px;
+    }
 
+    .leftArrowButton img{
+        height: 40px;
+    }
+
+    .leftArrowButton{
+        left: -1.4rem;
+    }
+
+
+    .glow-container{
+        display: none;
+    }
+    
 }
