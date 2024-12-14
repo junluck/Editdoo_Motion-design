@@ -181,6 +181,7 @@ body:not(.ourWorkBox){
     grid-template-columns: 40% 60%;
     margin-top: 5%;
     width: 70%;
+    max-width: 2400px;
     
 }
 .topPart p{
@@ -189,6 +190,8 @@ body:not(.ourWorkBox){
 
 .topPart .hire{
     opacity: 0.8;
+    font-size: clamp(1rem,1vw + 0.2rem,2.2rem);
+    line-height: 100%;
 }
 
 .topPart .order{
@@ -206,7 +209,7 @@ body:not(.ourWorkBox){
 
    width: 110%;
    height: 100%;
-  
+   max-width:1400px;
    grid-column-start: 2;
    grid-column-end: 3;
    
@@ -220,7 +223,7 @@ body:not(.ourWorkBox){
    
 }
 .mainHeading{
-    font-size: clamp(1rem,3.15vw + 0.9rem,10rem);
+    font-size: clamp(1rem,3.15vw + 0.9rem,8rem);
     margin-bottom: 0;
     
    
@@ -577,6 +580,8 @@ a{
     position: relative;
     right: -10%;
     width: 100%;
+    overflow: hidden;
+    max-width: 2120px;
    
    
 }
@@ -1097,6 +1102,7 @@ input{
     width: 80%;
     height: 100%;
     min-height: 1000px;
+    max-width: 2100px;
 
 }
 
@@ -1408,6 +1414,7 @@ input{
         width: 95%;
         grid-template-columns: 50% 50%;
         grid-template-rows: 20% 80%;
+        max-width: 2800px;
     }
     .packages{
         grid-column-start: 1;
@@ -1448,6 +1455,15 @@ input{
     
 }
 
+@media(min-width:2160px){
+    .ourWorkBox{
+        right: 0%;
+       
+       
+    }
+    
+}
+
 @media(min-width:1921px)and (max-width:3999px) {
     
     body:not(.ourWorkBox){
@@ -1462,6 +1478,7 @@ input{
 @media(min-width:1501px){
     .creatorParent{
         display: grid;
+        max-width: 1200px;
     }
 
     .bodyOfFaqSection{
