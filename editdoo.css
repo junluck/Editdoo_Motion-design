@@ -190,7 +190,7 @@ body:not(.ourWorkBox){
 
 .topPart .hire{
     opacity: 0.8;
-    font-size: clamp(1rem,1vw + 0.2rem,2.2rem);
+    font-size: clamp(0.6rem,1vw + 0.2rem,2.2rem);
     line-height: 100%;
 }
 
