@@ -7,7 +7,7 @@ body:not(.ourWorkBox){
     background-color: #060B29;
     background-image: url("../Resources/path.png");
     background-repeat: no-repeat;
-    background-size: auto-fit;
+    background-size: 5000px;
     background-position: 60% 5%;
     color: white;
     font-family:'helvetica' ;
@@ -109,8 +109,12 @@ body:not(.ourWorkBox){
     display: flex;
     align-items: center;
     justify-content: space-between; 
+    max-width: 1920px;
+    margin-left:auto;
+    margin-right: auto;
     
  }
+ 
  
 .list{
     list-style: none;
@@ -213,12 +217,14 @@ h2{
     grid-column-start: 1;
     grid-column-end: 4;
     
+    
 }
 .lineBorderAndForm{
     display: grid;
     width: 70%;
     grid-template-rows: 100px 600px 100px;
     grid-template-columns: 10% 80% 10%;
+    max-width: 1420px;
     
 }
 
