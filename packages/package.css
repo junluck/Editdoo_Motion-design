@@ -109,6 +109,9 @@ body:not(.ourWorkBox){
     display: flex;
     align-items: center;
     justify-content: space-between; 
+    max-width: 1920px;
+    margin-left:auto;
+    margin-right: auto;
     
  }
  
