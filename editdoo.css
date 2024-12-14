@@ -1376,6 +1376,16 @@ input{
 .instagram{
     cursor: pointer;
 }
+
+.youtubeAnchor{
+    justify-self: center;
+    align-self: center;
+    
+}
+.instagramAnchor{
+    justify-self: center;
+    align-self: center;
+}
 @keyframes glow-visibility{
     0%, 100%{ opacity: 0;}
     25%, 75%{opacity: 1;}
