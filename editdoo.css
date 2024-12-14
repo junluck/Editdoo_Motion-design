@@ -2111,7 +2111,15 @@ input{
      .timerEnd{
         font-size: 0.8rem;
      }
+     .topPart img{
 
+        width: 400px;
+        height: 100%;
+        min-height: 300px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        
+     }
 }
 
 
@@ -2296,6 +2304,16 @@ input{
       
         
     }
+
+    .topPart img{
+
+        width: 300px;
+        height: 100%;
+       
+        grid-column-start: 2;
+        grid-column-end: 3;
+        
+     }
 
 
 }
@@ -2637,4 +2655,14 @@ input{
         display: none;
     }
     
+    .topPart img{
+
+        width: 120%;
+        height: 100%;
+        min-height: 70px;
+        min-width: 120px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        
+     }
 }
