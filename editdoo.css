@@ -232,8 +232,7 @@ body:not(.ourWorkBox){
 .mainHeading{
     font-size: clamp(1rem,3.15vw + 0.9rem,8rem);
     margin-bottom: 0;
-    margin-left: -5px;
-    
+    margin-left: 0px;
    
 }
 
@@ -2027,7 +2026,17 @@ input{
         font-size: 0.8rem;
      }
 
-  
+     .topPart .order {
+        display: flex;
+        background-color: #0C7EEF;
+        width:6.375rem;
+        height: 2.05rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.6rem;
+        border-radius: 2rem;
+    }
+    
 
 }
 @media (min-width:741px ) and (max-width:930px){
@@ -2368,14 +2377,15 @@ input{
 
 }
 @media(max-width:584px){
+    
     .navbar{
         display: none;
     }
 
     .topPart .order{
-        width: 4.375rem;
-        height: 1.75rem;
-        font-size: 0.46rem;
+        width: 3.375rem;
+        height: 1.05rem;
+        font-size: 0.36rem;
     }
     
     .mainHeading{
