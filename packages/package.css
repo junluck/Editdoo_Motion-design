@@ -217,7 +217,7 @@ body:not(.ourWorkBox){
 }
 .packageOneAndTwo{
     width: 90%;
-    min-width: 320px;
+    min-width: 315px;
     justify-self: center;
     margin-top: 90px;
     padding-bottom:70px ;
