@@ -217,14 +217,7 @@ h2{
     grid-column-end: 4;
     
 }
-.lineBorderAndForm{
-    display: grid;
-    width: 70%;
-    grid-template-rows: 100px 600px 100px;
-    grid-template-columns: 10% 80% 10%;
-    max-width: 1420px;
-    
-}
+
 
 .forms{
     display: grid;
@@ -424,7 +417,14 @@ a{
     .humburger-Menu,.hidden-Menu{
         display: none;
     }
-   
+    .lineBorderAndForm{
+        display: grid;
+        width: 70%;
+        grid-template-rows: 100px 600px 100px;
+        grid-template-columns: 10% 80% 10%;
+        max-width: 1420px;
+        
+    }
 
 
 
@@ -435,7 +435,14 @@ a{
         display:none;
       
     }
-
+    .lineBorderAndForm{
+        display: grid;
+        width: 70%;
+        grid-template-rows: 100px 600px 100px;
+        grid-template-columns: 10% 80% 10%;
+        max-width: 1420px;
+        
+    }
  
     
 } 
@@ -445,7 +452,14 @@ a{
         display:none;
       
     }
-
+    .lineBorderAndForm{
+        display: grid;
+        width: 70%;
+        grid-template-rows: 100px 600px 100px;
+        grid-template-columns: 10% 80% 10%;
+        max-width: 1420px;
+        
+    }
     
  
      
@@ -460,7 +474,14 @@ a{
         margin-left: 0rem;
     }
   
-   
+    .lineBorderAndForm{
+        display: grid;
+        width: 70%;
+        grid-template-rows: 100px 600px 100px;
+        grid-template-columns: 10% 80% 10%;
+        max-width: 1420px;
+        
+    }
 
  
     .logo{
@@ -480,7 +501,14 @@ a{
     .logo{
         display: none;
     }
-
+    .lineBorderAndForm{
+        display: grid;
+        width: 70%;
+        grid-template-rows: 100px 600px 100px;
+        grid-template-columns: 10% 80% 10%;
+        max-width: 1420px;
+        
+    }
 }
 @media (min-width:741px ) and (max-width:930px){
     .navbar{
@@ -491,7 +519,14 @@ a{
     .logo{
         display: none;
     }
-
+    .lineBorderAndForm{
+        display: grid;
+        width: 70%;
+        grid-template-rows: 100px 600px 100px;
+        grid-template-columns: 10% 80% 10%;
+        max-width: 1420px;
+        
+    }
 }
 
 
@@ -514,6 +549,15 @@ a{
         width: 98%;
     }
 
+    .lineBorderAndForm{
+        display: grid;
+        width: 100%;
+        grid-template-rows: 100px 600px 100px;
+        grid-template-columns: 10% 80% 10%;
+        max-width: 1420px;
+        
+    }
+
 }
 @media(max-width:584px){
     .lineBorderAndForm{
@@ -532,6 +576,13 @@ a{
         display: none;
     }
 
-    
+    .lineBorderAndForm{
+        display: grid;
+        width: 100%;
+        grid-template-rows: 100px 600px 100px;
+        grid-template-columns: 4% 92% 4%;
+        max-width: 1420px;
+        
+    }
 
 }

@@ -1886,8 +1886,20 @@ input{
         width: 38vw;
       
     }
-    
+
+    .topPart .order {
+        display: flex;
+        background-color: #0C7EEF;
+        width: 7.375rem;
+        height: 2.5rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.7rem;
+        border-radius: 2rem;
+    }
 }
+
+    
 @media (min-width:931px ) and (max-width:1170px){
     body:not(.ourWorkBox){
         background-color: #060B29;
